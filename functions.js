@@ -10,7 +10,6 @@ source: http://www.csslab.cl/2011/08/18/jquery-timelinr/
 ---------------------------------- */
 
 jQuery.fn.timelinr = function(options){
-	// default plugin settings
 	settings = jQuery.extend({
 		orientation: 				'horizontal',		// value: horizontal | vertical, default to horizontal
 		containerDiv: 				'#timeline',		// value: any HTML tag or #id, default to #timeline
@@ -147,17 +146,14 @@ jQuery.fn.timelinr = function(options){
 
 		$(settings.prevButton).click(function(event){
 			event.preventDefault();
-			// bugixed from 0.9.54: now the dates gets centered when there's too much dates.
 			var currentIndex = $(settings.issuesDiv).find('li.'+settings.issuesSelectedClass).index();
 			if(settings.orientation == 'horizontal') {
 				var currentPositionIssues = parseInt($(settings.issuesDiv).css('marginLeft').substring(0,$(settings.issuesDiv).css('marginLeft').indexOf('px')));
-				var currentPositionDates = parseInt($(settings.datesDiv).css('marginLeft').substring(0,$(settings.datesDiv).css('marginLeft').indexOf('px')));
 				if(currentPositionIssues >= 0) {
 					$(settings.issuesDiv).stop();
 					$(settings.datesDiv+' li:first-child a').click();
 				} else {
 					if (!$(settings.issuesDiv).is(':animated')) {
-						// bugixed from 0.9.54: now the dates gets centered when there's too much dates.
 						$(settings.datesDiv+' li').eq(currentIndex-1).find('a').trigger('click');
 					}
 				}
@@ -168,12 +164,11 @@ jQuery.fn.timelinr = function(options){
 					$(settings.datesDiv+' li:first-child a').click();
 				} else {
 					if (!$(settings.issuesDiv).is(':animated')) {
-						// bugixed from 0.9.54: now the dates gets centered when there's too much dates.
 						$(settings.datesDiv+' li').eq(currentIndex-1).find('a').trigger('click');
 					}
 				}
 			}
-			// prev/next buttons now disappears on first/last issue | bugfix from 0.9.51: lower than 1 issue hide the arrows
+
 			if(howManyDates == 1) {
 				$(settings.prevButton+','+settings.nextButton).fadeOut('fast');
 			} else if(howManyDates == 2) {
@@ -197,7 +192,7 @@ jQuery.fn.timelinr = function(options){
 				}	
 			}
 		});
-		// keyboard navigation, added since 0.9.1
+
 		if(settings.arrowKeys=='true') {
 			if(settings.orientation=='horizontal') {
 				$(document).keydown(function(event){
@@ -219,7 +214,7 @@ jQuery.fn.timelinr = function(options){
 				});
 			}
 		}
-		// default position startAt, added since 0.9.3
+
 		$(settings.datesDiv+' li').eq(settings.startAt-1).find('a').trigger('click');
 		// autoPlay, added since 0.9.4
 		if(settings.autoPlay == 'true') { 
@@ -228,7 +223,6 @@ jQuery.fn.timelinr = function(options){
 	});
 };
 
-// autoPlay, added since 0.9.4
 function autoPlay(){
 	var currentDate = $(settings.datesDiv).find('a.'+settings.datesSelectedClass);
 	if(settings.autoPlayDirection == 'forward') {
