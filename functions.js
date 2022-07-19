@@ -6,7 +6,7 @@ Copyright 2011, CSSLab.cl
 Free under the MIT license.
 https://www.opensource.org/licenses/mit-license.php
 
-instructions: http://www.csslab.cl/2011/08/18/jquery-timelinr/
+source: http://www.csslab.cl/2011/08/18/jquery-timelinr/
 ---------------------------------- */
 
 jQuery.fn.timelinr = function(options){
@@ -32,22 +32,15 @@ jQuery.fn.timelinr = function(options){
 	}, options);
 
 	$(function(){
-		// setting variables... many of them
 		var howManyDates = $(settings.datesDiv+' li').length;
 		var howManyIssues = $(settings.issuesDiv+' li').length;
-		var currentDate = $(settings.datesDiv).find('a.'+settings.datesSelectedClass);
-		var currentIssue = $(settings.issuesDiv).find('li.'+settings.issuesSelectedClass);
 		var widthContainer = $(settings.containerDiv).width();
 		var heightContainer = $(settings.containerDiv).height();
-		var widthIssues = $(settings.issuesDiv).width();
-		var heightIssues = $(settings.issuesDiv).height();
 		var widthIssue = $(settings.issuesDiv+' li').width();
 		var heightIssue = $(settings.issuesDiv+' li').height();
-		var widthDates = $(settings.datesDiv).width();
-		var heightDates = $(settings.datesDiv).height();
 		var widthDate = $(settings.datesDiv+' li').width();
 		var heightDate = $(settings.datesDiv+' li').height();
-		// set positions!
+
 		if(settings.orientation == 'horizontal') {	
 			$(settings.issuesDiv).width(widthIssue*howManyIssues);
 			$(settings.datesDiv).width(widthDate*howManyDates).css('marginLeft',widthContainer/2-widthDate/2);
@@ -59,18 +52,16 @@ jQuery.fn.timelinr = function(options){
 		}
 		
 		$(settings.datesDiv+' a').click(function(event){
+
 			event.preventDefault();
-			// first vars
-			var whichIssue = $(this).text();
 			var currentIndex = $(this).parent().prevAll().length;
-			// moving the elements
 			if(settings.orientation == 'horizontal') {
 				$(settings.issuesDiv).animate({'marginLeft':-widthIssue*currentIndex},{queue:false, duration:settings.issuesSpeed});
 			} else if(settings.orientation == 'vertical') {
 				$(settings.issuesDiv).animate({'marginTop':-heightIssue*currentIndex},{queue:false, duration:settings.issuesSpeed});
 			}
 			$(settings.issuesDiv+' li').animate({'opacity':settings.issuesTransparency},{queue:false, duration:settings.issuesSpeed}).removeClass(settings.issuesSelectedClass).eq(currentIndex).addClass(settings.issuesSelectedClass).fadeTo(settings.issuesTransparencySpeed,1);
-			// prev/next buttons now disappears on first/last issue | bugfix from 0.9.51: lower than 1 issue hide the arrows | bugfixed: arrows not showing when jumping from first to last date
+		
 			if(howManyDates == 1) {
 				$(settings.prevButton+','+settings.nextButton).fadeOut('fast');
 			} else if(howManyDates == 2) {
@@ -95,7 +86,7 @@ jQuery.fn.timelinr = function(options){
 					$(settings.nextButton+','+settings.prevButton).fadeIn('slow');
 				}	
 			}
-			// now moving the dates
+
 			$(settings.datesDiv+' a').removeClass(settings.datesSelectedClass);
 			$(this).addClass(settings.datesSelectedClass);
 			if(settings.orientation == 'horizontal') {
@@ -107,38 +98,29 @@ jQuery.fn.timelinr = function(options){
 
 		$(settings.nextButton).bind('click', function(event){
 			event.preventDefault();
-			// bugixed from 0.9.54: now the dates gets centered when there's too much dates.
 			var currentIndex = $(settings.issuesDiv).find('li.'+settings.issuesSelectedClass).index();
 			if(settings.orientation == 'horizontal') {
 				var currentPositionIssues = parseInt($(settings.issuesDiv).css('marginLeft').substring(0,$(settings.issuesDiv).css('marginLeft').indexOf('px')));
-				var currentIssueIndex = currentPositionIssues/widthIssue;
-				var currentPositionDates = parseInt($(settings.datesDiv).css('marginLeft').substring(0,$(settings.datesDiv).css('marginLeft').indexOf('px')));
-				var currentIssueDate = currentPositionDates-widthDate;
 				if(currentPositionIssues <= -(widthIssue*howManyIssues-(widthIssue))) {
 					$(settings.issuesDiv).stop();
 					$(settings.datesDiv+' li:last-child a').click();
 				} else {
 					if (!$(settings.issuesDiv).is(':animated')) {
-						// bugixed from 0.9.52: now the dates gets centered when there's too much dates.
 						$(settings.datesDiv+' li').eq(currentIndex+1).find('a').trigger('click');
 					}
 				}
 			} else if(settings.orientation == 'vertical') {
 				var currentPositionIssues = parseInt($(settings.issuesDiv).css('marginTop').substring(0,$(settings.issuesDiv).css('marginTop').indexOf('px')));
-				var currentIssueIndex = currentPositionIssues/heightIssue;
-				var currentPositionDates = parseInt($(settings.datesDiv).css('marginTop').substring(0,$(settings.datesDiv).css('marginTop').indexOf('px')));
-				var currentIssueDate = currentPositionDates-heightDate;
 				if(currentPositionIssues <= -(heightIssue*howManyIssues-(heightIssue))) {
 					$(settings.issuesDiv).stop();
 					$(settings.datesDiv+' li:last-child a').click();
 				} else {
 					if (!$(settings.issuesDiv).is(':animated')) {
-						// bugixed from 0.9.54: now the dates gets centered when there's too much dates.
 						$(settings.datesDiv+' li').eq(currentIndex+1).find('a').trigger('click');
 					}
 				}
 			}
-			// prev/next buttons now disappears on first/last issue | bugfix from 0.9.51: lower than 1 issue hide the arrows
+
 			if(howManyDates == 1) {
 				$(settings.prevButton+','+settings.nextButton).fadeOut('fast');
 			} else if(howManyDates == 2) {
@@ -169,9 +151,7 @@ jQuery.fn.timelinr = function(options){
 			var currentIndex = $(settings.issuesDiv).find('li.'+settings.issuesSelectedClass).index();
 			if(settings.orientation == 'horizontal') {
 				var currentPositionIssues = parseInt($(settings.issuesDiv).css('marginLeft').substring(0,$(settings.issuesDiv).css('marginLeft').indexOf('px')));
-				var currentIssueIndex = currentPositionIssues/widthIssue;
 				var currentPositionDates = parseInt($(settings.datesDiv).css('marginLeft').substring(0,$(settings.datesDiv).css('marginLeft').indexOf('px')));
-				var currentIssueDate = currentPositionDates+widthDate;
 				if(currentPositionIssues >= 0) {
 					$(settings.issuesDiv).stop();
 					$(settings.datesDiv+' li:first-child a').click();
@@ -183,9 +163,6 @@ jQuery.fn.timelinr = function(options){
 				}
 			} else if(settings.orientation == 'vertical') {
 				var currentPositionIssues = parseInt($(settings.issuesDiv).css('marginTop').substring(0,$(settings.issuesDiv).css('marginTop').indexOf('px')));
-				var currentIssueIndex = currentPositionIssues/heightIssue;
-				var currentPositionDates = parseInt($(settings.datesDiv).css('marginTop').substring(0,$(settings.datesDiv).css('marginTop').indexOf('px')));
-				var currentIssueDate = currentPositionDates+heightDate;
 				if(currentPositionIssues >= 0) {
 					$(settings.issuesDiv).stop();
 					$(settings.datesDiv+' li:first-child a').click();
