@@ -38,8 +38,6 @@ h1,h2,h4,h5,h6 {
 }
 
 #timeline {
-  width: 800px;
-  height: 350px;
   overflow: hidden;
   margin: 2% auto;
   position: relative;
