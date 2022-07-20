@@ -16,11 +16,11 @@ jQuery.fn.timelinr = function(options){
 		datesDiv: 					'#dates',			// value: any HTML tag or #id, default to #dates
 		datesSelectedClass: 		'selected',			// value: any class, default to selected
 		datesSpeed: 				'normal',			// value: integer between 100 and 1000 (recommended) or 'slow', 'normal' or 'fast'; default to normal
-		issuesDiv: 					'#issues',			// value: any HTML tag or #id, default to #issues
-		issuesSelectedClass: 		'selected',			// value: any class, default to selected
-		issuesSpeed: 				'fast',				// value: integer between 100 and 1000 (recommended) or 'slow', 'normal' or 'fast'; default to fast
-		issuesTransparency: 		0.2,				// value: integer between 0 and 1 (recommended), default to 0.2
-		issuesTransparencySpeed: 	500,				// value: integer between 100 and 1000 (recommended), default to 500 (normal)
+		yearsDiv: 					'#years',			// value: any HTML tag or #id, default to #years
+		yearsSelectedClass: 		'selected',			// value: any class, default to selected
+		yearsSpeed: 				'fast',				// value: integer between 100 and 1000 (recommended) or 'slow', 'normal' or 'fast'; default to fast
+		yearsTransparency: 		0.2,				// value: integer between 0 and 1 (recommended), default to 0.2
+		yearsTransparencySpeed: 	500,				// value: integer between 100 and 1000 (recommended), default to 500 (normal)
 		prevButton: 				'#prev',			// value: any HTML tag or #id, default to #prev
 		nextButton: 				'#next',			// value: any HTML tag or #id, default to #next
 		arrowKeys: 					'false',			// value: true | false, default to false
@@ -32,22 +32,24 @@ jQuery.fn.timelinr = function(options){
 
 	$(function(){
 		var howManyDates = $(settings.datesDiv+' li').length;
-		var howManyIssues = $(settings.issuesDiv+' li').length;
+		var howManyyears = $(settings.yearsDiv+' li').length;
 		var widthContainer = $(settings.containerDiv).width();
 		var heightContainer = $(settings.containerDiv).height();
-		var widthIssue = $(settings.issuesDiv+' li').width();
-		var heightIssue = $(settings.issuesDiv+' li').height();
+		var widthIssue = $(settings.yearsDiv+' li').width();
+		var heightIssue = $(settings.yearsDiv+' li').height();
 		var widthDate = $(settings.datesDiv+' li').width();
 		var heightDate = $(settings.datesDiv+' li').height();
 
 		if(settings.orientation == 'horizontal') {	
-			$(settings.issuesDiv).width(widthIssue*howManyIssues);
+			$(settings.yearsDiv).width(widthIssue*howManyyears);
 			$(settings.datesDiv).width(widthDate*howManyDates).css('marginLeft',widthContainer/2-widthDate/2);
-			var defaultPositionDates = parseInt($(settings.datesDiv).css('marginLeft').substring(0,$(settings.datesDiv).css('marginLeft').indexOf('px')));
+			var defaultPositionDates = "";
+			defaultPositionDates = parseInt($(settings.datesDiv).css('marginLeft').substring(0,$(settings.datesDiv).css('marginLeft').indexOf('px')));
 		} else if(settings.orientation == 'vertical') {
-			$(settings.issuesDiv).height(heightIssue*howManyIssues);
+			$(settings.yearsDiv).height(heightIssue*howManyyears);
 			$(settings.datesDiv).height(heightDate*howManyDates).css('marginTop',heightContainer/2-heightDate/2);
-			var defaultPositionDates = parseInt($(settings.datesDiv).css('marginTop').substring(0,$(settings.datesDiv).css('marginTop').indexOf('px')));
+			var defaultPositionDates = "";
+			defaultPositionDates = parseInt($(settings.datesDiv).css('marginTop').substring(0,$(settings.datesDiv).css('marginTop').indexOf('px')));
 		}
 		
 		$(settings.datesDiv+' a').click(function(event){
@@ -55,29 +57,29 @@ jQuery.fn.timelinr = function(options){
 			event.preventDefault();
 			var currentIndex = $(this).parent().prevAll().length;
 			if(settings.orientation == 'horizontal') {
-				$(settings.issuesDiv).animate({'marginLeft':-widthIssue*currentIndex},{queue:false, duration:settings.issuesSpeed});
+				$(settings.yearsDiv).animate({'marginLeft':-widthIssue*currentIndex},{queue:false, duration:settings.yearsSpeed});
 			} else if(settings.orientation == 'vertical') {
-				$(settings.issuesDiv).animate({'marginTop':-heightIssue*currentIndex},{queue:false, duration:settings.issuesSpeed});
+				$(settings.yearsDiv).animate({'marginTop':-heightIssue*currentIndex},{queue:false, duration:settings.yearsSpeed});
 			}
-			$(settings.issuesDiv+' li').animate({'opacity':settings.issuesTransparency},{queue:false, duration:settings.issuesSpeed}).removeClass(settings.issuesSelectedClass).eq(currentIndex).addClass(settings.issuesSelectedClass).fadeTo(settings.issuesTransparencySpeed,1);
+			$(settings.yearsDiv+' li').animate({'opacity':settings.yearsTransparency},{queue:false, duration:settings.yearsSpeed}).removeClass(settings.yearsSelectedClass).eq(currentIndex).addClass(settings.yearsSelectedClass).fadeTo(settings.yearsTransparencySpeed,1);
 		
 			if(howManyDates == 1) {
 				$(settings.prevButton+','+settings.nextButton).fadeOut('fast');
 			} else if(howManyDates == 2) {
-				if($(settings.issuesDiv+' li:first-child').hasClass(settings.issuesSelectedClass)) {
+				if($(settings.yearsDiv+' li:first-child').hasClass(settings.yearsSelectedClass)) {
 					$(settings.prevButton).fadeOut('fast');
 				 	$(settings.nextButton).fadeIn('fast');
 				} 
-				else if($(settings.issuesDiv+' li:last-child').hasClass(settings.issuesSelectedClass)) {
+				else if($(settings.yearsDiv+' li:last-child').hasClass(settings.yearsSelectedClass)) {
 					$(settings.nextButton).fadeOut('fast');
 					$(settings.prevButton).fadeIn('fast');
 				}
 			} else {
-				if( $(settings.issuesDiv+' li:first-child').hasClass(settings.issuesSelectedClass) ) {
+				if( $(settings.yearsDiv+' li:first-child').hasClass(settings.yearsSelectedClass) ) {
 					$(settings.nextButton).fadeIn('fast');
 					$(settings.prevButton).fadeOut('fast');
 				} 
-				else if( $(settings.issuesDiv+' li:last-child').hasClass(settings.issuesSelectedClass) ) {
+				else if( $(settings.yearsDiv+' li:last-child').hasClass(settings.yearsSelectedClass) ) {
 					$(settings.prevButton).fadeIn('fast');
 					$(settings.nextButton).fadeOut('fast');
 				}
@@ -97,24 +99,24 @@ jQuery.fn.timelinr = function(options){
 
 		$(settings.nextButton).bind('click', function(event){
 			event.preventDefault();
-			var currentIndex = $(settings.issuesDiv).find('li.'+settings.issuesSelectedClass).index();
+			var currentIndex = $(settings.yearsDiv).find('li.'+settings.yearsSelectedClass).index();
 			if(settings.orientation == 'horizontal') {
-				var currentPositionIssues = parseInt($(settings.issuesDiv).css('marginLeft').substring(0,$(settings.issuesDiv).css('marginLeft').indexOf('px')));
-				if(currentPositionIssues <= -(widthIssue*howManyIssues-(widthIssue))) {
-					$(settings.issuesDiv).stop();
+				var currentPositionyears = parseInt($(settings.yearsDiv).css('marginLeft').substring(0,$(settings.yearsDiv).css('marginLeft').indexOf('px')));
+				if(currentPositionyears <= -(widthIssue*howManyyears-(widthIssue))) {
+					$(settings.yearsDiv).stop();
 					$(settings.datesDiv+' li:last-child a').click();
 				} else {
-					if (!$(settings.issuesDiv).is(':animated')) {
+					if (!$(settings.yearsDiv).is(':animated')) {
 						$(settings.datesDiv+' li').eq(currentIndex+1).find('a').trigger('click');
 					}
 				}
 			} else if(settings.orientation == 'vertical') {
-				var currentPositionIssues = parseInt($(settings.issuesDiv).css('marginTop').substring(0,$(settings.issuesDiv).css('marginTop').indexOf('px')));
-				if(currentPositionIssues <= -(heightIssue*howManyIssues-(heightIssue))) {
-					$(settings.issuesDiv).stop();
+				var currentPositionyears = parseInt($(settings.yearsDiv).css('marginTop').substring(0,$(settings.yearsDiv).css('marginTop').indexOf('px')));
+				if(currentPositionyears <= -(heightIssue*howManyyears-(heightIssue))) {
+					$(settings.yearsDiv).stop();
 					$(settings.datesDiv+' li:last-child a').click();
 				} else {
-					if (!$(settings.issuesDiv).is(':animated')) {
+					if (!$(settings.yearsDiv).is(':animated')) {
 						$(settings.datesDiv+' li').eq(currentIndex+1).find('a').trigger('click');
 					}
 				}
@@ -123,19 +125,19 @@ jQuery.fn.timelinr = function(options){
 			if(howManyDates == 1) {
 				$(settings.prevButton+','+settings.nextButton).fadeOut('fast');
 			} else if(howManyDates == 2) {
-				if($(settings.issuesDiv+' li:first-child').hasClass(settings.issuesSelectedClass)) {
+				if($(settings.yearsDiv+' li:first-child').hasClass(settings.yearsSelectedClass)) {
 					$(settings.prevButton).fadeOut('fast');
 				 	$(settings.nextButton).fadeIn('fast');
 				} 
-				else if($(settings.issuesDiv+' li:last-child').hasClass(settings.issuesSelectedClass)) {
+				else if($(settings.yearsDiv+' li:last-child').hasClass(settings.yearsSelectedClass)) {
 					$(settings.nextButton).fadeOut('fast');
 					$(settings.prevButton).fadeIn('fast');
 				}
 			} else {
-				if( $(settings.issuesDiv+' li:first-child').hasClass(settings.issuesSelectedClass) ) {
+				if( $(settings.yearsDiv+' li:first-child').hasClass(settings.yearsSelectedClass) ) {
 					$(settings.prevButton).fadeOut('fast');
 				} 
-				else if( $(settings.issuesDiv+' li:last-child').hasClass(settings.issuesSelectedClass) ) {
+				else if( $(settings.yearsDiv+' li:last-child').hasClass(settings.yearsSelectedClass) ) {
 					$(settings.nextButton).fadeOut('fast');
 				}
 				else {
@@ -146,24 +148,24 @@ jQuery.fn.timelinr = function(options){
 
 		$(settings.prevButton).click(function(event){
 			event.preventDefault();
-			var currentIndex = $(settings.issuesDiv).find('li.'+settings.issuesSelectedClass).index();
+			var currentIndex = $(settings.yearsDiv).find('li.'+settings.yearsSelectedClass).index();
 			if(settings.orientation == 'horizontal') {
-				var currentPositionIssues = parseInt($(settings.issuesDiv).css('marginLeft').substring(0,$(settings.issuesDiv).css('marginLeft').indexOf('px')));
-				if(currentPositionIssues >= 0) {
-					$(settings.issuesDiv).stop();
+				var currentPositionyears = parseInt($(settings.yearsDiv).css('marginLeft').substring(0,$(settings.yearsDiv).css('marginLeft').indexOf('px')));
+				if(currentPositionyears >= 0) {
+					$(settings.yearsDiv).stop();
 					$(settings.datesDiv+' li:first-child a').click();
 				} else {
-					if (!$(settings.issuesDiv).is(':animated')) {
+					if (!$(settings.yearsDiv).is(':animated')) {
 						$(settings.datesDiv+' li').eq(currentIndex-1).find('a').trigger('click');
 					}
 				}
 			} else if(settings.orientation == 'vertical') {
-				var currentPositionIssues = parseInt($(settings.issuesDiv).css('marginTop').substring(0,$(settings.issuesDiv).css('marginTop').indexOf('px')));
-				if(currentPositionIssues >= 0) {
-					$(settings.issuesDiv).stop();
+				var currentPositionyears = parseInt($(settings.yearsDiv).css('marginTop').substring(0,$(settings.yearsDiv).css('marginTop').indexOf('px')));
+				if(currentPositionyears >= 0) {
+					$(settings.yearsDiv).stop();
 					$(settings.datesDiv+' li:first-child a').click();
 				} else {
-					if (!$(settings.issuesDiv).is(':animated')) {
+					if (!$(settings.yearsDiv).is(':animated')) {
 						$(settings.datesDiv+' li').eq(currentIndex-1).find('a').trigger('click');
 					}
 				}
@@ -172,19 +174,19 @@ jQuery.fn.timelinr = function(options){
 			if(howManyDates == 1) {
 				$(settings.prevButton+','+settings.nextButton).fadeOut('fast');
 			} else if(howManyDates == 2) {
-				if($(settings.issuesDiv+' li:first-child').hasClass(settings.issuesSelectedClass)) {
+				if($(settings.yearsDiv+' li:first-child').hasClass(settings.yearsSelectedClass)) {
 					$(settings.prevButton).fadeOut('fast');
 				 	$(settings.nextButton).fadeIn('fast');
 				} 
-				else if($(settings.issuesDiv+' li:last-child').hasClass(settings.issuesSelectedClass)) {
+				else if($(settings.yearsDiv+' li:last-child').hasClass(settings.yearsSelectedClass)) {
 					$(settings.nextButton).fadeOut('fast');
 					$(settings.prevButton).fadeIn('fast');
 				}
 			} else {
-				if( $(settings.issuesDiv+' li:first-child').hasClass(settings.issuesSelectedClass) ) {
+				if( $(settings.yearsDiv+' li:first-child').hasClass(settings.yearsSelectedClass) ) {
 					$(settings.prevButton).fadeOut('fast');
 				} 
-				else if( $(settings.issuesDiv+' li:last-child').hasClass(settings.issuesSelectedClass) ) {
+				else if( $(settings.yearsDiv+' li:last-child').hasClass(settings.yearsSelectedClass) ) {
 					$(settings.nextButton).fadeOut('fast');
 				}
 				else {

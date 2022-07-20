@@ -4,9 +4,9 @@
 }
 
 body {
-  background: rgb(59, 65, 70);
   font-family: Georgia, serif;
-  color: #fff;
+  background-color: grey;
+  color: white;
   font-size: 14px;
 }
 
@@ -28,7 +28,7 @@ a.selected {
 h1,h2,h4,h5,h6 {
   text-align: center;
   color: #ccc;
-  text-shadow: #000 1px 1px 2px;
+  text-shadow: #000 1px 2px;
   margin-bottom: 5px;
 }
 
@@ -40,17 +40,9 @@ h2 {
   font-size: 14px;
 }
 
-.sociales {
+.Connections {
   text-align: center;
   margin-bottom: 20px;
-}
-
-#intro {
-  width: 800px;
-  height: 200px;
-  overflow: hidden;
-  margin: 2% auto;
-  position: relative;
 }
 
 #timeline {
@@ -59,7 +51,6 @@ h2 {
   overflow: hidden;
   margin: 2% auto;
   position: relative;
-  background: url('../images/dot.gif') left 45px repeat-x;
 }
 
 #dates {
@@ -75,7 +66,6 @@ h2 {
   height: 50px;
   font-size: 24px;
   text-align: center;
-  background: url('../images/biggerdot.png') center bottom no-repeat;
 }
 
 #dates a {
@@ -87,20 +77,19 @@ h2 {
   font-size: 38px;
 }
 
-#issues {
+#years {
   width: 800px;
-  height: 350px;
-  overflow: hidden;
+  height: 400px;
 }
 
-#issues li {
+#years li {
   width: 800px;
   height: 350px;
   list-style: none;
   float: left;
 }
 
-#issues li.selected img {
+#years li.selected img {
   -webkit-transform: scale(1.1, 1.1);
   -moz-transform: scale(1.1, 1.1);
   -o-transform: scale(1.1, 1.1);
@@ -108,12 +97,10 @@ h2 {
   transform: scale(1.1, 1.1);
 }
 
-#issues li img {
+#years li img {
   float: left;
   margin: 10px 30px 10px 50px;
   background: transparent;
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)";
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF);
   zoom: 1;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
@@ -127,7 +114,7 @@ h2 {
   transform: scale(0.7, 0.7);
 }
 
-#issues li h1 {
+#years li h1 {
   color: #ffcc00;
   font-size: 48px;
   margin: 20px 0;
@@ -136,29 +123,11 @@ h2 {
   padding-left: 70px;
 }
 
-#issues li p {
+#years li p {
   font-size: 14px;
   margin-right: 70px;
   margin-left: 70px;
   font-weight: normal;
   line-height: 22px;
   text-shadow: #000 1px 1px 2px;
-}
-
-#grad_left,
-#grad_right {
-  width: 100px;
-  height: 350px;
-  position: absolute;
-  top: 0;
-}
-
-#grad_left {
-  left: 0;
-  background: url('../images/grad_left.png') repeat-y;
-}
-
-#grad_right {
-  right: 0;
-  background: url('../images/grad_right.png') repeat-y;
 }
