@@ -216,7 +216,6 @@ jQuery.fn.timelinr = function(options){
 		}
 
 		$(settings.datesDiv+' li').eq(settings.startAt-1).find('a').trigger('click');
-		// autoPlay, added since 0.9.4
 		if(settings.autoPlay == 'true') { 
 			setInterval("autoPlay()", settings.autoPlayPause);
 		}
