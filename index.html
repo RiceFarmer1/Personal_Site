@@ -10,55 +10,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="other.js"></script>
     <script src="timeline.js"></script>
-
-    <script>
-    $(function(){
-        $().timelinr({
-        arrowKeys: 'true'
-        })
-    });
-    </script>
-
-    <style>
-    body,h1,h2,h3,h4,h5 {
-        font-family: "sans-serif";
-    }
-    body {
-        font-size: 20px;
-    }
-    .w3-half img{
-        margin-bottom:-6px;
-        margin-top:16px;
-        opacity:0.8;
-        cursor:pointer
-    }
-    .w3-half img:hover{
-        opacity: 1
-    }
-    </style>
     
 </head>
 
 <body>
 
-    <nav class="w3-sidebar w3-orange w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%; font-size:25px">Close</a>
+    <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft w3-black" style="width:100%; font-size:25px">Close</a>
         <div class="w3-container">
-            <h3 class="w3-padding-64"><b>Welcome to the Website of Oscar</b></h3>
+            <h3 class="w3-xxlarge w3-padding-32"><b>Welcome to the Website of Oscar</b></h3>
         </div>
         
         <div class="w3-bar-block">
-            <a href="#Introduction" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Introduction</a> 
-            <a href="#timeline" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Timeline</a> 
-            <a href="#Interests & Skills" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Interests & Skills</a> 
-            <a href="#Connections" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Connections</a> 
+            <a href="#Introduction" onclick= "w3_close()" class="w3-xlarge w3-bar-item w3-button w3-hover-purple">Introduction</a> 
+            <a href="#timeline" onclick="w3_close()" class=" w3-xlarge w3-bar-item w3-button w3-hover-purple">Timeline</a> 
+            <a href="#Interests & Skills" onclick="w3_close()" class=" w3-xlarge w3-bar-item w3-button w3-hover-purple">Interests & Skills</a> 
+            <a href="#Connections" onclick="w3_close()" class="w3-xlarge w3-bar-item w3-button w3-hover-purple">Connections</a> 
         </div>
-    </nav>
-
-    <!-- Top menu on small screens -->
+    </nav>  
+    
     <header class="w3-container w3-top w3-hide-large w3-orange w3-xlarge w3-padding">
         <a href="javascript:void(0)" class="w3-button w3-orange w3-margin-right" onclick="w3_open()">☰</a>
-        <span>Welcome to the Website of Oscar</span>
+        <span class="w3-xxlarge">Welcome to the Website of Oscar</span>
     </header>
 
     <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
@@ -67,12 +40,8 @@
     <div class="w3-container" style="margin-top:80px" id="Introduction">
         <h1 class="w3-xxxlarge w3-text-orange"><b>Introduction</b></h1>
         <hr>
-    </div>
-    
-    <div class="w3-row-padding">
-        <div class="w3-half">
-        <img src="images/me.png" style="width:40%">
-        </div>
+        <img src="images/oscar.jpg">
+        <p style="text-align:center;">Hello, my name is Oscar Pang. </p>
     </div>
 
     <div class="w3-container" id="timeline" style="margin-top:75px">
@@ -82,84 +51,152 @@
         <ul id="dates">
             <li><a href="#2005">2005</a></li>
             <li><a href="#2009">2009</a></li>
+            <li><a href="#2011">2011</a></li>
             <li><a href="#2014">2014</a></li>
             <li><a href="#2016">2016</a></li>
             <li><a href="#2017">2017</a></li>
             <li><a href="#2019">2019</a></li>
             <li><a href="#2020">2020</a></li>
             <li><a href="#2023">2023</a></li>
-            <li><a href="#2027">2027</a></li>
-            <li><a href="#After">After</a></li>
         </ul>
     
         <ul id="years">
-            <li id="2005">
-                <h1>2005</h1>
-                <p>DKN Hotels founded with the acquisition of the Surf Motel Carlsbad, CA</p>
-                <br>
-                <p>Acquisition of the Marco Polo Inn Anaheim, CA (repositioned as: Days Inn)</p>
+            <li id="2005" >
+                <h2>2005</h2>
+                <dl>
+                    <dt>Location:</dt>
+                    <dd>Shenzhen, China</dd>
+                    <br>
+                    <dt>School:</dt>
+                    <dd>None</dd>   
+                    <br>
+                    <dt>Accomplishments (2005-2009):</dt>
+                    <dd>Learning how to talk and walk</dd> 
+                </dl>
             </li>
             <li id="2009">
-                <h1>2009</h1>
-                <p>Acquisition of the Park Vue Anaheim, CA (repositioned as: Econo Lodge)</p>
+                <h2>2009</h2>
+                <dl>
+                    <dt>Location:</dt>
+                    <dd>Changsha, China</dd>
+                    <br>
+                    <dt>School:</dt>
+                    <dd>Some Kindergarten</dd>   
+                    <br>
+                    <dt>Accomplishments (2009-2011): </dt>
+                    <dd>Making my first friends</dd> 
+                    <dd>Learning how to ride a bicycle</dd> 
+                    <dd></dd> 
+                </dl>
+            </li>
+            <li id="2011">
+                <h2>2011</h2>
+                <dl>
+                    <dt>Location:</dt>
+                    <dd>Changsha, China</dd>
+                    <br>
+                    <dt>School:</dt>
+                    <dd>长沙市育才学校</dd>   
+                    <br>
+                    <dt>Accomplishments (2011-2014):</dt>
+                    <dd>Learning the piano & playing in front of an audience</dd> 
+                    <dd>Learning Taekwondo</dd>  
+                    <dd>Learning Calligraphy</dd>  
+                </dl>
             </li>
             <li id="2014">
-                <h1>2014</h1>
-                <p>Acquisition of the Quality Inn in Ontario, CA (repositioned as: Holiday Inn Express)</p>
-                <br>
-                <p>Construction of the Econo Lodge Flagstaff East, AZ (repositioned as: Days Inn)</p>
+                <h2>2014</h2>
+                <dl>
+                    <dt>Location:</dt>
+                    <dd>Toronto, Canada</dd>
+                    <br>
+                    <dt>School:</dt>
+                    <dd>Mckee Public School</dd>   
+                    <br>
+                    <dt>Accomplishments (2014-2016):</dt>
+                    <dd>Learning proper English</dd> 
+                    <dd>Adapting to a new country</dd>
+                    <dd>Making my first non-Chinese friend</dd>  
+                </dl>
             </li>
             <li id="2016">
-                <h1>2016</h1>
-                <p>Acquisition of the Sandman Inn Anaheim, CA (repositioned as: Ramada Limited)</p>
+                <h2>2016</h2>
+                <dl></dl>
+                    <dt>Location:</dt>
+                    <dd>Toronto, Canada</dd>
+                    <br>
+                    <dt>School:</dt>
+                    <dd>Bayview Middle School</dd>   
+                    <br>
+                    <dt>Accomplishments (2016-2017):</dt>
+                    <dd>Joining the Student Council</dd> 
+                    <dd>Winning my first math competition award</dd> 
+                    <dd>Learning how to play tennis</dd>
+                </dl>
             </li>
             <li id="2017">
-                <h1>2017</h1>
-                <p>Acquisition of the Summer House Inn in San Diego, CA</p>
+                <h2>2017</h2>
+                <dl>
+                    <dt>Location:</dt>
+                    <dd>Richmond Hill, Canada</dd>
+                    <br>
+                    <dt>School:</dt>
+                    <dd>Holy Trinity School</dd>   
+                    <br>
+                    <dt>Accomplishments (2017-2019):</dt>
+                    <dd>Level 8 Piano & Theory Certification</dd> 
+                    <dd>Grade 8 Gauss Contest School Champion</dd> 
+                    <dd>Grade 8 CNML Contest School Champion</dd> 
+                    <dd>Joining a sports team for the first time</dd> 
+                </dl>
             </li>
             <li id="2019">
-                <h1>2019</h1>
-                <p>Acquisition of the Comfort Inn San Diego (repositioned as: Holiday Inn Express)</p>
-                <br>
-                <p>Acquisition of the Harbor Inn Anaheim, CA (repositioned as: Comfort Inn)</p>
-                <br>
-                <p>Construction of the Hampton Inn Flagstaff East (repositioned as: Country Inn & Suites)
-                </p>
+                <h2>2019</h2>
+                <dl>
+                    <dt>Location:</dt>
+                    <dd>Toronto, Canada</dd>
+                    <br>
+                    <dt>School:</dt>
+                    <dd>Victoria Park Collegiate Institute</dd>   
+                    <br>
+                    <dt>Accomplishments (2019-2020):</dt>
+                    <dd>Bronze Medallion & Standard First Aid Certification</dd> 
+                    <dd>Getting into an IB program (but later left)</dd> 
+                    <dd>Volunteering for the first time</dd> 
+                </dl>
             </li>
             <li id="2020">
-                <h1>2020</h1>
-                <p>Acquisition of the Travelodge Midway San Diego, CA</p>
-                <br>
-                <p>Acquisition of the Midway Motel in San Diego, CA (repositioned as: Travelodge SeaWorld)</p>
+                <h2>2020</h2>
+                <dl>
+                    <dt>Location:</dt>
+                    <dd>Richmond Hill, Canada</dd>
+                    <br>
+                    <dt>School:</dt>
+                    <dd>Holy Trinity School</dd>   
+                    <br>
+                    <dt>Accomplishments (2020-2023):</dt>
+                    <dd>Co-founding and leading a club (HTS Coding Club)</dd> 
+                    <dd>Becoming a House Captain at my school</dd> 
+                    <dd>Recieving the Academic Excellence Award every year</dd> 
+                    <dd>Winning multiple math contests and qualifying for AIME</dd> 
+                    <dd>Starting my own nonprofit organization (Maple Peers)</dd> 
+                </dl>
             </li>
             <li id="2023">
-                <h1>2023</h1>
-                <p>Acquisition of the Newport Bay Inn in Costa Mesa, CA (repositioned as: Holiday Inn Express)</p>
-                <br>
-                <p>Acquisition of the Newport Beach Inn in Newport Beach, CA (repositioned as: Best Western)</p>
-                <br>
-                <p>Acquisition of he Travelodge in San Marcos, CA (repositioned as: Ramada Limited)
-                </p>
-            </li>
-            <li id="2027">
-                <h1>2027</h1>
-                <p>Acquisition of the Days Inn I-40 in Flagstaff, AZ</p>
-                <br>
-                <p>Acquisition of the Days Inn in San Diego, CA (repositioned as: Best Western)</p>
-                <br>
-                <p>Acquisition of the Del Norte Inn in Camarillo, CA (repositioned as: Holiday Inn Express)</p>
-                <br>
-                <p>Acquisition of the Quality Inn in Fresno, CA</p>
-                </p>
-            </li>
-            <li id="After">
-                <h1>After</h1>
-                <p>Acquisition of the Days Inn Route 66 in Flagstaff, AZ</p>
-                <br>
-                <p>Acquisition of the Quality Suites in San Clemente, CA (repositioned as: Hampton Inn & Suites)</p>
-                <br>
-                <p>Acquisition of the Conestoga Hotel in Anaheim, CA (repositioned as: Holiday Inn & Suites)</p>
-                </p>
+                <h2>2023</h2>
+                <dl>
+                    <dt>Location [aspiration]:</dt>
+                    <dd>Pittsburgh, United States</dd>
+                    <br>
+                    <dt>School [aspiration]:</dt>
+                    <dd>Carneige Mellon University</dd>   
+                    <br>
+                    <dt>Accomplishments (2023-2027) [aspiration]:</dt>
+                    <dd>Bachelor's Degree in Computer Information Systems</dd> 
+                    <dd>Working as an intern for the first time</dd> 
+                    <dd>Starting an initiative at my university</dd> 
+                    <dd>Get a girlfriend or date a girl (priority)</dd> 
+                </dl>
             </li>
         </ul>
     
@@ -177,40 +214,101 @@
         dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
         incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
-        <p><b>Our Interests & Skills are thoughtfully chosen</b>:</p>
-    </div>
-
-    <!-- The Team -->
-    <div class="w3-row-padding w3-grayscale">
-        <div class="w3-col m4 w3-margin-bottom">
-        <div class="w3-light-grey">
-            <img src="" alt="John" style="width:100%">
-            <div class="w3-container">
-            <h3>John Doe</h3>
-            <p class="w3-opacity">CEO & Founder</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <br>
+        <div class="w3-row-padding w3-grayscale">
+            <div class="w3-col m4 w3-margin-bottom">
+            <div class="w3-light-grey">
+                <img src="">
+                <div class="w3-container">
+                <h3>Programming</h3>
+                <p class="w3-opacity">Level: Proficient but still needs improvement</p>
+                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                </div>
             </div>
-        </div>
-        </div>
-        <div class="w3-col m4 w3-margin-bottom">
-        <div class="w3-light-grey">
-            <img src="" alt="Jane" style="width:100%">
-            <div class="w3-container">
-            <h3>Jane Doe</h3>
-            <p class="w3-opacity">Designer</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
             </div>
-        </div>
-        </div>
-        <div class="w3-col m4 w3-margin-bottom">
-        <div class="w3-light-grey">
-            <img src="" alt="Mike" style="width:100%">
-            <div class="w3-container">
-            <h3>Mike Ross</h3>
-            <p class="w3-opacity">Architect</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="">
+                    <div class="w3-container">
+                    <h3>Mathematics</h3>
+                    <p class="w3-opacity">Level: Better than most but not the best</p>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                    </div>
+                </div>
+                </div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="">
+                    <div class="w3-container">
+                    <h3>Tennis</h3>
+                    <p class="w3-opacity">Level: Skilled but not too competitive</p>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="">
+                    <div class="w3-container">
+                    <h3>Photography</h3>
+                    <p class="w3-opacity">Level: Casual but loves taking photos for fun</p>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="">
+                    <div class="w3-container">
+                    <h3>Piano</h3>
+                    <p class="w3-opacity">Level: Used to be good but stopped playing</p>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="">
+                    <div class="w3-container">
+                    <h3>Statistics</h3>
+                    <p class="w3-opacity">Level: Mediocre but scored a 5 on the AP Exam</p>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="">
+                    <div class="w3-container">
+                    <h3>Travelling</h3>
+                    <p class="w3-opacity">Level: I guess I'm experienced?</p>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="">
+                    <div class="w3-container">
+                    <h3>Playing Games</h3>
+                    <p class="w3-opacity">Level: Bad but still enjoy it a lot</p>
+                    <p>If u've ever played an FPS game with me before, uk that I suck. Not only do My K/D ratios for these games range from 0.6 to 0.8, but I also almost always get the worst ranks (eg. Bronze in R6 Siege, Silver I in CSGO, 
+                    Iron 3 in Valorant). However, I do certaintly enjoy playing these games during my free time, as they serve as an escape from my busy schedule. Due to my strict parents, I am only allowed to play games on the weekend 
+                    (unless it's during a school break) and I am only allowed to play at night for like 2 hours. So I view these times as very precious moments. Btw my most-played games are R6 Siege, CSGO, Valorant, TF2, BF1, and Minecraft. 
+                    </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="">
+                    <div class="w3-container">
+                    <h3>Watching Youtube Videos</h3>
+                    <p class="w3-opacity">Level: Not really applicable</p>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -219,38 +317,48 @@
         <h1 class="w3-xxxlarge w3-text-orange"><b>Connections</b></h1>
         <hr>
         <p>Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
+
+        <br>
+
+        <div class="w3-half w3-row-padding">
+            <ul class="w3-ul w3-center">
+                <li class="w3-blue w3-xlarge w3-padding-32">Social Media</li>
+                <li class="w3-light-grey w3-padding-24">
+                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Discord</button>
+                </li>
+                <li class="w3-light-grey w3-padding-24">
+                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Instagram</button>
+                </li>
+                <li class="w3-light-grey w3-padding-24">
+                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Snapchat</button>
+                </li>
+                <li class="w3-light-grey w3-padding-24">
+                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Reddit</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="w3-half w3-row-padding">
+            <ul class="w3-ul w3-center">
+                <li class="w3-red w3-xlarge w3-padding-32">Other Things</li>
+                <li class="w3-light-grey w3-padding-24">
+                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Steam</button>
+                </li>
+                <li class="w3-light-grey w3-padding-24">
+                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Spotify</button>
+                </li>
+                <li class="w3-light-grey w3-padding-24">
+                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Github</button>
+                </li>
+                <li class="w3-light-grey w3-padding-24">
+                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Email</button>
+                </li>
+            </ul>
+        </div>
+
     </div>
 
-    <div class="w3-row-padding">
-        <div class="w3-half w3-margin-bottom">
-        <ul class="w3-ul w3-light-grey w3-center">
-            <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
-            <li class="w3-padding-16">Floorplanning</li>
-            <li class="w3-padding-16">10 hours support</li>
-            <li class="w3-padding-16">Photography</li>
-            <li class="w3-padding-16">20% furniture discount</li>
-            <li class="w3-padding-16">Good deals</li>
-            <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-            </li>
-        </ul>
-        </div>
-            
-        <div class="w3-half">
-        <ul class="w3-ul w3-light-grey w3-center">
-            <li class="w3-orange w3-xlarge w3-padding-32">Pro</li>
-            <li class="w3-padding-16">Floorplanning</li>
-            <li class="w3-padding-16">50 hours support</li>
-            <li class="w3-padding-16">Photography</li>
-            <li class="w3-padding-16">50% furniture discount</li>
-            <li class="w3-padding-16">GREAT deals</li>
-            <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-orange w3-padding-large w3-hover-black">Sign Up</button>
-            </li>
-        </ul>
-        </div>
-    </div>
-
+    <br><br><br><br>
     <br><br><br><br>
 
 </body>

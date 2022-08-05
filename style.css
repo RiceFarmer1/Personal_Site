@@ -5,9 +5,40 @@
 
 body {
   font-family: Georgia, serif;
-  background-color: grey;
+  background: radial-gradient(circle, rgb(68, 77, 122) 0%, rgb(100, 67, 175) 48%, rgb(63, 84, 119) 100%);
   color: white;
-  font-size: 14px;
+  font-size: 20px;
+}
+
+nav {   
+  border-right: 7.5px solid aqua;
+  background: linear-gradient(90deg, rgb(169, 179, 31) 0%, rgb(179, 166, 24) 100%);
+}
+
+p {
+  font-size: 20px;
+}
+
+hr {
+  border: 2.5px solid cyan;
+  border-radius: 5px;
+}
+
+img {
+  display: block;
+  float: left;
+  width: 15%;
+  border: 5px double green;
+  box-shadow: 5px 5px 5px lightgreen;
+  border-radius: 20px;
+  filter: opacity(0.95);
+}
+
+img:hover {
+  border: 5px double darkgreen;
+  box-shadow: 5px 5px 5px greenyellow;
+  border-radius: 20px;
+  filter: opacity(1);
 }
 
 a {
@@ -25,10 +56,10 @@ a.selected {
   color: #ffcc00;
 }
 
-h1,h2,h4,h5,h6 {
+h1{
   text-align: center;
   color: #ccc;
-  text-shadow: #000 1px 2px;
+  text-shadow: #000 1px 5px;
   margin-bottom: 5px;
 }
 
@@ -38,14 +69,14 @@ h1,h2,h4,h5,h6 {
 }
 
 #timeline {
-  overflow: hidden;
-  margin: 2% auto;
+  overflow:hidden;
+  margin: 5% auto;
   position: relative;
 }
 
 #dates {
   width: 800px;
-  height: 60px;
+  height: 70px;
   overflow: hidden;
 }
 
@@ -69,12 +100,12 @@ h1,h2,h4,h5,h6 {
 
 #years {
   width: 800px;
-  height: 400px;
+  height: 450px;
 }
 
 #years li {
   width: 800px;
-  height: 350px;
+  height: 400px;
   list-style: none;
   float: left;
 }
@@ -89,7 +120,6 @@ h1,h2,h4,h5,h6 {
 
 #years li img {
   float: left;
-  margin: 10px 30px 10px 50px;
   background: transparent;
   zoom: 1;
   -webkit-transition: all 2s ease-in-out;
@@ -104,20 +134,51 @@ h1,h2,h4,h5,h6 {
   transform: scale(0.7, 0.7);
 }
 
-#years li h1 {
-  color: #ffcc00;
+#years li h2 {
+  color: gold;
   font-size: 48px;
   margin: 20px 0;
-  text-shadow: #000 1px 1px 2px;
   text-align: left;
   padding-left: 70px;
+  text-shadow: #000 1px 3px;
 }
 
-#years li p {
-  font-size: 14px;
+dt {
+  font-weight: bold;
+  font-size: 20px;
   margin-right: 70px;
   margin-left: 70px;
-  font-weight: normal;
-  line-height: 22px;
-  text-shadow: #000 1px 1px 2px;
+}
+
+dd {
+  font-size: 18px;
+  margin-right: 70px;
+  margin-left: 100px;
+  font-weight: normal; 
+}
+
+::-webkit-scrollbar
+{
+	width: 20px;
+	background-color: pink;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: orangered;	
+	background-image: -webkit-linear-gradient(45deg,
+    rgba(255, 255, 255, .2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, .2) 50%,
+    rgba(255, 255, 255, .2) 75%,
+    transparent 75%,
+    transparent);
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  #dates {
+    text-align: center;
+  }
 }
