@@ -14,3 +14,12 @@ function onClick(element) {
     var captionText = document.getElementById("caption");
     captionText.innerHTML = element.alt;
 }
+
+function playAudio() { 
+  var audio = document.getElementById("audio");
+  audio.play();
+} 
+function pauseAudio() { 
+  var audio = document.getElementById("audio");
+  audio.pause();
+} 

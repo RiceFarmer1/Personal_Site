@@ -15,6 +15,9 @@
 
 <body>
 
+    <!-- I got this vertical navbar template from w3Schools cause I'm too lazy-->
+    <!-- Will improve this in the future -->
+
     <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft w3-black" style="width:100%; font-size:25px">Close</a>
         <div class="w3-container">
@@ -37,22 +40,31 @@
     <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
     <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
-    <div class="w3-container" style="margin-top:80px" id="Introduction">
+    <div class="w3-container" style="margin-top:100px" id="Introduction">
         <h1 class="w3-xxxlarge w3-text-orange"><b>Introduction</b></h1>
         <hr>
-        <img src="images/oscar.jpg">
-        <p style="text-align:center; padding-left:20%;">Hello, my English name is Oscar Pang (some random English tutor named me "oscar") but my legal name is Shenglong Pang (庞盛龙). 
-            I am Chinese but I currently live in Toronto, Canada as a permenant resident. My height is 172 cm (5'7.75) and my weight is 68-72 kg (150-159 lb). My personality type is INTP 
-            and my IQ is somewhere between 69 and 420.
+        <img src="images/oscar.jpg" style="margin-left:2.5%">
+        <p style="text-align:center; padding-left:20%; padding-right:5%;">Hello, my English name is Oscar Pang (some random English tutor named me "oscar"), but my legal name is Shenglong Pang (庞盛龙). 
+            I am Chinese and I currently live in Toronto, Canada as a permenant resident. My height is 172 cm (5'7.75) and my weight is 68-72 kg (150-159 lb). My personality type is INTP 
+            and my IQ is average.
         </p>
         <br>
-        <p style="text-align:center; padding-left:20%;">As someone who is good at math, plays the piano, and gets relatively good marks, I am the embodiment of the Asian stereotype. Jk, my marks actually aren't that good, 
-            which is why I am trying to compensate for by particiapting in a bunch of activities and starting my own initiatives. I aspire to pursue computer science / information science in a top tier American university. 
-            I know that the chances are low, but as my friend Elon Musk once said, "the first step is to establish that something is possible; then probability will occur."
+        <p style="text-align:center; padding-left:20%; padding-right:5%;">As someone who is good at math, plays the piano, and gets good marks, I am the embodiment of the Asian stereotype. Jk, my marks actually aren't that good, 
+            which is why I am trying to compensate for by particiapting in a bunch of activities and starting my own initiatives. Even though my eyes are small, I have a good vision of my future — 
+            My goal is to pursue computer science / information systems at a top tier American university. I know that the chances are low, but as Elon Musk once said, "the first step is to establish that something 
+            is possible; then probability will occur."
         </p>
+        <br><br>
+        <div style="padding-left:40%;">
+            <button onclick="playAudio()" type="button" style="margin-right: 2%; border-radius:20px;" id="btn">Play background music</button>
+            <button onclick="pauseAudio()" type="button" style="margin-right: 2%; border-radius:20px;" id="btn">Pause background music</button> 
+            <audio id="audio" src="song.mp3"></audio>
+        </div>
     </div>
 
-    <div class="w3-container" id="timeline" style="margin-top:75px">
+    <!-- Timeline -->
+
+    <div class="w3-container" id="timeline" style="margin-top:100px">
         <h1 class="w3-xxxlarge w3-text-orange"><b>Timeline</b></h1>
         <hr>
 
@@ -214,54 +226,49 @@
     </div>
     
     <!-- Interests & Skills -->
-    <div class="w3-container" id="Interests & Skills" style="margin-top:75px">
+    <div class="w3-container" id="Interests & Skills" style="margin-top:80px">
         <h1 class="w3-xxxlarge w3-text-orange"><b>Interests & Skills</b></h1>
         <hr>
         <div class="w3-row-padding w3-grayscale">
             <div class="w3-col m4 w3-margin-bottom">
             <div class="w3-light-grey">
-                <img src="">
-                <div class="w3-container">
+                <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
                 <h3>Programming</h3>
                 <p class="w3-opacity">Level: Proficient but still needs improvement</p>
-                <p>I started coding since grade 7, and it has became my main passion since then. I utilized my knowledge by building many websites and some applications as well.</p>
+                <p>I started coding since grade 7, and it has became my main passion since then. I utilized my knowledge by building a few projects. I currently know Java, Python, HTML, Javascript, and C.</p>
                 </div>
             </div>
             </div>
             <div class="w3-col m4 w3-margin-bottom">
                 <div class="w3-light-grey">
-                    <img src="">
-                    <div class="w3-container">
+                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
                     <h3>Mathematics</h3>
                     <p class="w3-opacity">Level: Better than most but not the best</p>
-                    <p>I used to suck at math back in China, but when I came to Canada I suddenly became school champion. I think we all know the reason: u guys are just bad.</p>
+                    <p>I used to be below average at math back in China, but when I came to Canada I suddenly begin winning dozens of awards. Still, I'm not the best at academic math; only above average.</p>
                     </div>
                 </div>
                 </div>
             <div class="w3-col m4 w3-margin-bottom">
                 <div class="w3-light-grey">
-                    <img src="">
-                    <div class="w3-container">
+                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
                     <h3>Tennis</h3>
-                    <p class="w3-opacity">Level: Skilled but not too competitive</p>
+                    <p class="w3-opacity">Level: Decent but not too competitive</p>
                     <p>I have been playing tennis since grade 6, but I stopped in grade 8 due to laziness and also in grade 10 due to the pandemic. But I got to play for the school team last year which is good.</p>
                     </div>
                 </div>
             </div>
             <div class="w3-col m4 w3-margin-bottom">
                 <div class="w3-light-grey">
-                    <img src="">
-                    <div class="w3-container">
+                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
                     <h3>Photography</h3>
                     <p class="w3-opacity">Level: Casual but loves taking photos for fun</p>
                     <p>I developed a passion for photography in grade 9, when I participated in a photography summer camp. Here are some of my past photos.</p>
                     </div>
                 </div>
             </div>
-            <div class="w3-col m4 w3-margin-bottom">
+            <div class="w3-col m4 w3-margin-bottom"> 
                 <div class="w3-light-grey">
-                    <img src="">
-                    <div class="w3-container">
+                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
                     <h3>Piano</h3>
                     <p class="w3-opacity">Level: Used to be good but stopped playing</p>
                     <p>I reached level 8 in both piano and music theory back in 2019, but stopped since then. I still remember how to play some very easy songs tho.</p>
@@ -270,8 +277,7 @@
             </div>
             <div class="w3-col m4 w3-margin-bottom">
                 <div class="w3-light-grey">
-                    <img src="">
-                    <div class="w3-container">
+                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
                     <h3>Statistics</h3>
                     <p class="w3-opacity">Level: Mediocre but scored a 5 on the AP Exam</p>
                     <p>I've never even done this before March, 2022. But when I started to study it for the AP exam, I found statistics to be quite interesting.</p>
@@ -280,18 +286,16 @@
             </div>
             <div class="w3-col m4 w3-margin-bottom">
                 <div class="w3-light-grey">
-                    <img src="">
-                    <div class="w3-container">
+                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
                     <h3>Travelling</h3>
                     <p class="w3-opacity">Level: I guess I'm experienced?</p>
-                    <p>I've visited to many countries in North America, Europe, Asia, and Oceania. Even though I can't see too well, I do have a broad vision of the world.</p>
+                    <p>I've visited to many countries in North America, Europe, Asia, and Oceania. Even though my eyes are small, my vision of the future s.</p>
                     </div>
                 </div>
             </div>
             <div class="w3-col m4 w3-margin-bottom">
                 <div class="w3-light-grey">
-                    <img src="">
-                    <div class="w3-container">
+                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
                     <h3>Playing Games</h3>
                     <p class="w3-opacity">Level: Trash but still enjoy it a lot</p>
                     <p>Everyone knows that I suck but I still think that gaming is a nice way to escape from my busy schedule. My favorite games are FPS games.</p>
@@ -300,8 +304,7 @@
             </div>
             <div class="w3-col m4 w3-margin-bottom">
                 <div class="w3-light-grey">
-                    <img src="">
-                    <div class="w3-container">
+                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
                     <h3>Watching Youtube Videos</h3>
                     <p class="w3-opacity">Level: Not really applicable</p>
                     <p>I average >20 hours a week on youtube. I also enjoy watching movies, TV shows, and some anime; but Youtube is simply superior.</p>
@@ -311,55 +314,60 @@
         </div>
     </div>
 
-    <!-- Connections / Pricing Tables -->
-    <div class="w3-container" id="Connections" style="margin-top:75px">
+    <!-- Connections -->
+    <div class="w3-container" id="Connections" style="margin-top:75px;" id="Connections">
         <h1 class="w3-xxxlarge w3-text-orange"><b>Connections</b></h1>
         <hr>
-        <p>Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
-
+        <p> If you want to reach out to me, the best way is through Discord, Instagram, or my phone number (647-765-6673). I also have Twitter and Reddit but I chose not
+            to include my accounts here as they are mainly for trolling purposes. You can also email me at <a href="mailto:oskioscar135@gmail.com">oskioscar135@gmail.com</a> 
+            for any business inquiries. </p>
         <br>
 
         <div class="w3-half w3-row-padding">
             <ul class="w3-ul w3-center">
-                <li class="w3-blue w3-xlarge w3-padding-32">Social Media</li>
+                <li class="w3-blue w3-xlarge w3-padding-32">Socials</li>
                 <li class="w3-light-grey w3-padding-24">
-                <p style="color:black">Discord: Oskip0906#7537</p>
-                <a href = "https://discord.gg/YWDCnp3pGq"></a>
+                <p style="color:black">Discord (I am your average discord mod): Oskip0906#7537</p>
+                <a href = "https://discord.gg/YWDCnp3pGq"><img src="images/discord.png" style = "width:60px;"></a>
                 </li>
                 <li class="w3-light-grey w3-padding-24">
-                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Instagram</button>
+                    <p style="color:black">Instagram (Follow me I need more followers): oskip123</p>
+                    <a href = "https://www.instagram.com/oskip123/"><img src="images/instagram.png" style = "width:50px;"></a>
                 </li>
                 <li class="w3-light-grey w3-padding-24">
-                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Snapchat</button>
+                    <p style="color:black">Snapchat (I don't use it that much): shenglongp1</p>    
+                    <a href = "https://t.snapchat.com/J2ybEmBd"><img src="images/snapchat.png" style = "width:65px;"></a>
                 </li>
                 <li class="w3-light-grey w3-padding-24">
-                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Reddit</button>
+                    <p style="color:black">Linkedin (there is a face reveal lol): Oscar Pang</p>
+                    <a href = "https://www.linkedin.com/in/oscar-shenglong-pang-338b00241/"><img src="images/linkedin.png" style = "width:50px;"></a>
                 </li>
             </ul>
         </div>
 
-        <div class="w3-half w3-row-padding">
+        <div class="w3-half w3-row-padding" style="margin-bottom:200px;">
             <ul class="w3-ul w3-center">
-                <li class="w3-red w3-xlarge w3-padding-32">Other Things</li>
+                <li class="w3-red w3-xlarge w3-padding-32">Other</li>
                 <li class="w3-light-grey w3-padding-24">
-                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Steam</button>
+                    <p style="color:black">Spotify (I listen to music a lot): Random Person</p>
+                    <a href = "https://open.spotify.com/user/7gsd1305qmzdn9i0t4yvtgjbt"><img src="images/spotify.png" style = "width:55px;"></a>
                 </li>
                 <li class="w3-light-grey w3-padding-24">
-                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Spotify</button>
+                    <p style="color:black">Steam (I'm bad at games but wtv): Rice Farmer</p>
+                    <a href = "https://steamcommunity.com/profiles/76561198997562925"><img src="images/steam.png" style = "width:55px;"></a>
                 </li>
                 <li class="w3-light-grey w3-padding-24">
-                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Github</button>
+                    <p style="color:black">Github (more projects coming soon): Ricefarmer1</p>
+                    <a href = "https://github.com/RiceFarmer1"><img src="images/github.png" style = "width:54px;"></a>
                 </li>
                 <li class="w3-light-grey w3-padding-24">
-                <button class="w3-button w3-grey w3-padding-large w3-hover-black">Email</button>
+                    <p style="color:black">Paypal (I am broke pls donate): oskip0906 </p>
+                    <a href = "https://www.paypal.me/oskip0906?locale.x=en_CA"><img src="images/paypal.png" style = "width:50px; border-radius:20%"></a>
                 </li>
             </ul>
         </div>
 
     </div>
-
-    <br><br><br><br>
-    <br><br><br><br>
 
 </body>
 </html>
