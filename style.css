@@ -44,6 +44,7 @@ hr {
 #Connections img {
   display:inline;
   filter: grayscale(69%);
+  width:50px;
 }
 
 #Connections img:hover {
