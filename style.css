@@ -19,6 +19,10 @@ p {
   font-size: 20px;
 }
 
+a:hover {
+  color:rgb(179, 166, 24);
+}
+
 hr {
   border: 2.5px solid cyan;
   border-radius: 5px;
@@ -71,11 +75,6 @@ a {
   transition: 0.5s;
 }
 
-a:hover,
-a.selected {
-  color: #ffcc00;
-}
-
 h1{
   text-align: center;
   color: #ccc;
@@ -83,15 +82,15 @@ h1{
   margin-bottom: 5px;
 }
 
-.Connections {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 #timeline {
   overflow:hidden;
   margin: 5% auto;
   position: relative;
+}
+
+#timeline a:hover,
+#timeline a.selected {
+  color: #ffcc00;
 }
 
 #dates {
