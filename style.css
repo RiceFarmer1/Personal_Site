@@ -35,14 +35,6 @@ hr {
   border: 5px double green;
   box-shadow: 5px 5px 5px lightgreen;
   border-radius: 20px;
-  filter: opacity(0.95);
-}
-
-#Introduction img:hover {
-  border: 5px double darkgreen;
-  box-shadow: 5px 5px 5px greenyellow;
-  border-radius: 20px;
-  filter: opacity(1);
 }
 
 #Connections img {
