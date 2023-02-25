@@ -1,7 +1,6 @@
 <!-- 
-This website is made by Oscar Pang. 
-Feel free to steal any code here cause I copied some from W3Schools anyways.
-Just make sure to send me like $10 or I'll hack into ur bank account.
+This website is made by Oscar Pang
+Feel free to steal any code here cause I copied some from W3Schools anyways
 -->
 
 <!DOCTYPE html>
@@ -12,7 +11,7 @@ Just make sure to send me like $10 or I'll hack into ur bank account.
     <link rel="icon" href="images/me.png" type="image/png">
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="style.css" media="screen" />
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="other.js"></script>
     <script src="timeline.js"></script>
@@ -21,29 +20,29 @@ Just make sure to send me like $10 or I'll hack into ur bank account.
 
 <body>
 
-    <!-- I got this vertical navbar template from W3Schools cause I'm too lazy-->
-    <!-- I will improve this in the future -->
+    <!-- I got this vertical navbar template from W3Schools because I'm too lazy
+    I will improve this in the future -->
 
     <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft w3-black" style="width:100%; font-size:25px">Close</a>
+        <a href="javascript:void(0)" onclick="close_menu()" class="w3-button w3-hide-large w3-display-topleft w3-black" style="width:100%; font-size:25px">Close</a>
         <div class="w3-container">
             <h3 class="w3-xxlarge w3-padding-32"><b>Welcome to the Website of Oscar</b></h3>
         </div>
         
         <div class="w3-bar-block">
-            <a href="#Introduction" onclick= "w3_close()" class="w3-xlarge w3-bar-item w3-button w3-hover-purple">Introduction</a> 
-            <a href="#timeline" onclick="w3_close()" class=" w3-xlarge w3-bar-item w3-button w3-hover-purple">Timeline</a> 
-            <a href="#Interests & Skills" onclick="w3_close()" class=" w3-xlarge w3-bar-item w3-button w3-hover-purple">Interests & Skills</a> 
-            <a href="#Connections" onclick="w3_close()" class="w3-xlarge w3-bar-item w3-button w3-hover-purple">Connections</a> 
+            <a href="#Introduction" onclick= "close_menu()" class="w3-xlarge w3-bar-item w3-button w3-hover-purple">Introduction</a> 
+            <a href="#timeline" onclick="close_menu()" class=" w3-xlarge w3-bar-item w3-button w3-hover-purple">Timeline</a> 
+            <a href="#Interests & Skills" onclick="close_menu()" class=" w3-xlarge w3-bar-item w3-button w3-hover-purple">Interests & Skills</a> 
+            <a href="#Connections" onclick="close_menu()" class="w3-xlarge w3-bar-item w3-button w3-hover-purple">Connections</a> 
         </div>
     </nav>  
     
     <header class="w3-container w3-top w3-hide-large w3-orange w3-xlarge w3-padding">
-        <a href="javascript:void(0)" class="w3-button w3-orange w3-margin-right" onclick="w3_open()">☰</a>
+        <a href="javascript:void(0)" class="w3-button w3-orange w3-margin-right" onclick="open_menu()">☰</a>
         <span class="w3-xxlarge">Welcome to the Website of Oscar</span>
     </header>
 
-    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+    <div class="w3-overlay w3-hide-large" onclick="close_menu()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
     <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
     <div class="w3-container" style="margin-top:100px;" id="Introduction">
@@ -216,7 +215,7 @@ Just make sure to send me like $10 or I'll hack into ur bank account.
     <div class="w3-container" id="Interests & Skills" style="margin-top:75px;">
         <h1 class="w3-xxxlarge w3-text-orange"><b>Interests & Skills</b></h1>
         <hr>
-        <div class="w3-row-padding w3-grayscale">
+        <div class="w3-row-padding">
             <div class="w3-col m4 w3-margin-bottom">
                 <div class="w3-light-grey">
                     <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
@@ -244,6 +243,8 @@ Just make sure to send me like $10 or I'll hack into ur bank account.
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="w3-row-padding">
             <div class="w3-col m4 w3-margin-bottom">
                 <div class="w3-light-grey">
                     <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
@@ -253,7 +254,7 @@ Just make sure to send me like $10 or I'll hack into ur bank account.
                     </div>
                 </div>
             </div>
-            <div class="w3-col m4 w3-margin-bottom"> 
+            <div class="w3-col m4 w3-margin-bottom">
                 <div class="w3-light-grey">
                     <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
                     <h3>Piano</h3>
@@ -271,6 +272,8 @@ Just make sure to send me like $10 or I'll hack into ur bank account.
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="w3-row-padding">
             <div class="w3-col m4 w3-margin-bottom">
                 <div class="w3-light-grey">
                     <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
