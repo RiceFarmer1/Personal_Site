@@ -1,0 +1,22 @@
+{
+  "name": "me-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "other.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oskip0906/me.git"
+  },
+  "author": "Oscar Pang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oskip0906/me/issues"
+  },
+  "homepage": "https://github.com/oskip0906/me#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}
