@@ -1,16 +1,15 @@
-<!-- This website is made by Oscar Pang -->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Oscar's Website</title>
     <link rel="icon" href="images/me.png" type="image/png">
 
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="other.js"></script>
     <script src="timeline.js"></script>
 
@@ -18,294 +17,354 @@
 
 <body>
 
-    <!-- navbar -->
-    <nav class="navbar navbar-light navbar-expand-lg">
-        <div class="container-fluid m-3">
-
-            <h2 class="mb-2">This is Oscar's Website</h2>
-
-            <button class="navbar-toggler mb-2"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarContent"
-                aria-controls="navbarContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-5">
-                        <a class="nav-link text-center" href="#Introduction">Introduction</a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link text-center" href="#">Timeline</a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link text-center" href="#">Interests & Skills</a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link text-center" href="#">Connections</a>
-                    </li>
-                </ul>
-            </div>
+    <!-- Navbar -->
+    <nav id="sidebar" class="sidebar py-3">
+        <div>
+            <h2 class="my-5">Oscar's Website</h2>
+            <ul class="navbar-nav">
+                <li class="nav-item my-3">
+                    <a class="nav-link" href="#Introduction">Introduction</a>
+                </li>
+                <li class="nav-item my-3">
+                    <a class="nav-link" href="#timeline">Timeline</a>
+                </li>
+                <li class="nav-item my-3">
+                    <a class="nav-link" href="#InterestsSkills">Interests & Skills</a>
+                </li>
+                <li class="nav-item my-3">
+                    <a class="nav-link" href="#Connections">Connections</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Introduction -->
-    <div class="container mt-5" id="Introduction">
-        <h1 class="text-center mb-4"><b>Introduction</b></h1>
-        <hr>
-        <div class="d-flex flex-column align-items-center">
-            <p class="text-center w-75">Hello, my English name is Oscar Pang, but my legal name is Shenglong Pang (庞盛龙).
-                I am Chinese and I currently reside in Toronto, Canada. My personality type is INTP.
-            </p>
-            <p class="text-center w-75"> y goal is to pursue computer science at a top Canadian university and eventually attend graduate school in the US.</p>
-        </div>
-        <div class="text-center mt-4">
-            <button onclick="playAudio()" class="btn btn-primary me-2">Play background music</button>
-            <button onclick="pauseAudio()" class="btn btn-secondary">Pause background music</button>
-            <audio id="audio" src="song.mp3"></audio>
-        </div>
-    </div>
+    <!-- Main Content -->
+    <div id="content" class="content main-content">
 
-    <!-- Timeline -->
-    <div class="container mt-5" id="timeline">
-        <h1><b>Timeline</b></h1>
-        <hr>
+        <img src="images\menu.png" id="toggleButton" class="toggle-btn" onclick="toggleButton()" style="position:fixed; z-index:9999; width: 150px; background-color: transparent;">
 
-        <ul id="dates">
-            <li><a href="#2005">2005</a></li>
-            <li><a href="#2009">2009</a></li>
-            <li><a href="#2011">2011</a></li>
-            <li><a href="#2014">2014</a></li>
-            <li><a href="#2016">2016</a></li>
-            <li><a href="#2017">2017</a></li>
-            <li><a href="#2019">2019</a></li>
-            <li><a href="#2020">2020</a></li>
-        </ul>
-
-        <ul id="years">
-            <li id="2005" >
-                <h2>2005</h2>
-                <dl>
-                    <dt>Location:</dt>
-                    <dd>Shenzhen, China</dd>
-                    <br>
-                    <dt>School:</dt>
-                    <dd>None</dd>
-                    <br>
-                    <dt>Accomplishments (2005-2009):</dt>
-                    <dd>Learning how to talk and walk</dd>
-                </dl>
-            </li>
-            <li id="2009">
-                <h2>2009</h2>
-                <dl>
-                    <dt>Location:</dt>
-                    <dd>Changsha, China</dd>
-                    <br>
-                    <dt>School:</dt>
-                    <dd>Some Kindergarten</dd>
-                    <br>
-                    <dt>Accomplishments (2009-2011): </dt>
-                    <dd>Making my first friends</dd>
-                    <dd>Learning how to ride a bicycle</dd>
-                    <dd></dd>
-                </dl>
-            </li>
-            <li id="2011">
-                <h2>2011</h2>
-                <dl>
-                    <dt>Location:</dt>
-                    <dd>Changsha, China</dd>
-                    <br>
-                    <dt>School:</dt>
-                    <dd>长沙市育才学校</dd>
-                    <br>
-                    <dt>Accomplishments (2011-2014):</dt>
-                    <dd>Learning the piano & playing in front of an audience</dd>
-                    <dd>Learning Taekwondo</dd>
-                    <dd>Learning Calligraphy</dd>
-                </dl>
-            </li>
-            <li id="2014">
-                <h2>2014</h2>
-                <dl>
-                    <dt>Location:</dt>
-                    <dd>Toronto, Canada</dd>
-                    <br>
-                    <dt>School:</dt>
-                    <dd>Mckee Public School</dd>
-                    <br>
-                    <dt>Accomplishments (2014-2016):</dt>
-                    <dd>Learning proper English</dd>
-                    <dd>Adapting to a new country</dd>
-                    <dd>Making my first non-Chinese friend</dd>
-                </dl>
-            </li>
-            <li id="2016">
-                <h2>2016</h2>
-                <dl></dl>
-                    <dt>Location:</dt>
-                    <dd>Toronto, Canada</dd>
-                    <br>
-                    <dt>School:</dt>
-                    <dd>Bayview Middle School</dd>
-                    <br>
-                    <dt>Accomplishments (2016-2017):</dt>
-                    <dd>Joining the Student Council</dd>
-                    <dd>Winning my first math competition award</dd>
-                    <dd>Learning how to play tennis</dd>
-                </dl>
-            </li>
-            <li id="2017">
-                <h2>2017</h2>
-                <dl>
-                    <dt>Location:</dt>
-                    <dd>Richmond Hill, Canada</dd>
-                    <br>
-                    <dt>School:</dt>
-                    <dd>{Redacted}</dd>
-                    <br>
-                    <dt>Accomplishments (2017-2019):</dt>
-                    <dd>Level 8 Piano & Theory Certification</dd>
-                    <dd>Grade 8 Gauss Contest School Champion</dd>
-                    <dd>Grade 8 CNML Contest School Champion</dd>
-                    <dd>Joining a sports team for the first time</dd>
-                </dl>
-            </li>
-            <li id="2019">
-                <h2>2019</h2>
-                <dl>
-                    <dt>Location:</dt>
-                    <dd>Toronto, Canada</dd>
-                    <br>
-                    <dt>School:</dt>
-                    <dd>Victoria Park Collegiate Institute</dd>
-                    <br>
-                    <dt>Accomplishments (2019-2020):</dt>
-                    <dd>Bronze Medallion & Standard First Aid Certification</dd>
-                    <dd>Getting into an IB program</dd>
-                    <dd>Volunteering for the first time</dd>
-                </dl>
-            </li>
-            <li id="2020">
-                <h2>2020</h2>
-                <dl>
-                    <dt>Location:</dt>
-                    <dd>Richmond Hill, Canada</dd>
-                    <br>
-                    <dt>School:</dt>
-                    <dd>Holy Trinity School</dd>
-                    <br>
-                    <dt>Accomplishments (2020-2023):</dt>
-                    <dd>Co-founding and leading a club (Coding Club)</dd>
-                    <dd>Becoming a House Captain at my school</dd>
-                    <dd>Playing for the school Tennis Team</dd>
-                    <dd>Winning multiple math contests and qualifying for AIME</dd>
-                    <dd>Starting my own nonprofit organization (<a href="https://maplepeers.org/">Maple Peers</a>)</dd>
-                </dl>
-            </li>
-        </ul>
-
-        <a href="#" id="next"></a>
-        <a href="#" id="prev"></a>
-
-    </div>
-
-    <!-- Interests & Skills -->
-    <div class="container mt-5" id="InterestsSkills">
-        <h1 class="text-center text-primary mb-4"><b>Interests & Skills</b></h1>
-        <hr>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h3>Programming</h3>
-                        <p class="text-muted">Level: Proficient</p>
-                        <p>I started coding since grade 7, and it has become my passion since then. I know Java, Python, HTML, JavaScript, and C.</p>
-                    </div>
-                </div>
+        <div class="container mt-5" id="Introduction">
+            <h1 class="display-4 text-center mb-4"><b>Introduction</b></h1>
+            <hr>
+            <div class="d-flex flex-column align-items-center">
+                <p class="text-center w-75">Hello, my English name is Oscar Pang, but my legal name is Shenglong Pang (庞盛龙). I am an 18 year old CS student at the University of Toronto who currently reside in Toronto, Canada. I am single and my  personality type is INTP.</p>
+                <p class="text-center w-75">I am currently trying to aquire more skills in computer science so I can get my first real internship for 2025 Winter. In the next few years, my goal is to make enough money to not have to depend on my parents anymore and hopefully buy my own car. </p>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h3>Mathematics</h3>
-                        <p class="text-muted">Level: Asian</p>
-                        <p>I used to be below average at math back in China but now excel in Canada, winning awards.</p>
-                    </div>
-                </div>
+            <div class="text-center mt-4">
+                <button onclick="playAudio()" class="btn btn-primary mr-5" style="box-shadow: 1px 1px 5px rgba(77, 70, 70, 0.5);">Play background music</button>
+                <button onclick="pauseAudio()" class="btn btn-secondary" style="box-shadow: 1px 1px 5px rgba(75, 69, 69, 0.5);">Pause background music</button>
+                <audio id="audio" src="song.mp3"></audio>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h3>Tennis</h3>
-                        <p class="text-muted">Level: Above average</p>
-                        <p>I have been playing tennis since grade 6, and recently got to play for the school team.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Other interests would be structured similarly -->
         </div>
-    </div>
 
-    <!-- Connections -->
-    <div class="container mt-5 mb-5" id="Connections">
-        <h1 class="text-center text-primary mb-4"><b>Connections</b></h1>
-        <hr>
-        <p>If you want to reach out to me, the best way is through Discord or Instagram.</p>
         <br>
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <ul class="list-group text-center">
-                    <li class="list-group-item list-group-item-primary"><b>Socials</b></li>
-                    <li class="list-group-item">
-                        <p>Discord: Oskip#7537</p>
-                        <a href="https://discord.gg/YWDCnp3pGq">
-                            <img src="images/discord.png" style="width:55px;">
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <p>Instagram: oskip123</p>
-                        <a href="https://www.instagram.com/oskip123/">
-                            <img src="images/instagram.png" style="width:45px;">
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <p>Snapchat: shenglongp1</p>
-                        <a href="https://t.snapchat.com/J2ybEmBd">
-                            <img src="images/snapchat.png" style="width:55px;">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-6 mb-4">
-                <ul class="list-group text-center">
-                    <li class="list-group-item list-group-item-danger"><b>Other</b></li>
-                    <li class="list-group-item">
-                        <p>Spotify: Random Person</p>
-                        <a href="https://open.spotify.com/user/7gsd1305qmzdn9i0t4yvtgjbt">
-                            <img src="images/spotify.png">
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <p>Steam: Rice Farmer</p>
-                        <a href="https://steamcommunity.com/profiles/76561198997562925">
-                            <img src="images/steam.png">
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <p>Paypal: oskip0906</p>
-                        <a href="https://www.paypal.me/oskip0906?locale.x=en_CA">
-                            <img src="images/paypal.png" style="border-radius:25%;width:45px;">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+
+        <!-- Timeline -->
+        <div class="container mt-5" id="timeline">
+          <h1 class="display-4 text-center"><b>Timeline</b></h1>
+          <hr>
+
+          <ul id="dates">
+              <li><a href="#2005">2005</a></li>
+              <li><a href="#2009">2009</a></li>
+              <li><a href="#2011">2011</a></li>
+              <li><a href="#2014">2014</a></li>
+              <li><a href="#2016">2016</a></li>
+              <li><a href="#2017">2017</a></li>
+              <li><a href="#2019">2019</a></li>
+              <li><a href="#2020">2020</a></li>
+              <li><a href="#2023">2023</a></li>
+          </ul>
+      
+          <ul id="years">
+              <li id="2005" >
+                  <h2>2005</h2>
+                  <dl>
+                      <dt>Location:</dt>
+                      <dd>Shenzhen, China</dd>
+                      <br>
+                      <dt>School:</dt>
+                      <dd>None</dd>   
+                      <br>
+                      <dt>Accomplishments (2005-2009):</dt>
+                      <dd>Learning how to talk and walk</dd> 
+                  </dl>
+              </li>
+              <li id="2009">
+                  <h2>2009</h2>
+                  <dl>
+                      <dt>Location:</dt>
+                      <dd>Changsha, China</dd>
+                      <br>
+                      <dt>School:</dt>
+                      <dd>Some kindergarten that no longer exists</dd>   
+                      <br>
+                      <dt>Accomplishments (2009-2011): </dt>
+                      <dd>Making my first friends</dd> 
+                      <dd>Learning how to ride a bicycle</dd> 
+                      <dd></dd> 
+                  </dl>
+              </li>
+              <li id="2011">
+                  <h2>2011</h2>
+                  <dl>
+                      <dt>Location:</dt>
+                      <dd>Changsha, China</dd>
+                      <br>
+                      <dt>School:</dt>
+                      <dd>长沙市育才学校</dd>   
+                      <br>
+                      <dt>Accomplishments (2011-2014):</dt>
+                      <dd>Learning the piano & playing in front of an audience</dd> 
+                      <dd>Learning Taekwondo</dd>  
+                      <dd>Learning Calligraphy</dd>  
+                  </dl>
+              </li>
+              <li id="2014">
+                  <h2>2014</h2>
+                  <dl>
+                      <dt>Location:</dt>
+                      <dd>Toronto, Canada</dd>
+                      <br>
+                      <dt>School:</dt>
+                      <dd>Mckee Public School</dd>   
+                      <br>
+                      <dt>Accomplishments (2014-2016):</dt>
+                      <dd>Learning proper English</dd> 
+                      <dd>Adapting to a new country</dd>
+                      <dd>Making my first non-Chinese friend</dd>  
+                  </dl>
+              </li>
+              <li id="2016">
+                  <h2>2016</h2>
+                  <dl></dl>
+                      <dt>Location:</dt>
+                      <dd>Toronto, Canada</dd>
+                      <br>
+                      <dt>School:</dt>
+                      <dd>Bayview Middle School</dd>   
+                      <br>
+                      <dt>Accomplishments (2016-2017):</dt>
+                      <dd>Joining the Student Council</dd> 
+                      <dd>Winning my first math competition award</dd> 
+                      <dd>Learning how to play tennis</dd>
+                  </dl>
+              </li>
+              <li id="2017">
+                  <h2>2017</h2>
+                  <dl>
+                      <dt>Location:</dt>
+                      <dd>Richmond Hill, Canada</dd>
+                      <br>
+                      <dt>School:</dt>
+                      <dd>Holy Trinity School</dd>   
+                      <br>
+                      <dt>Accomplishments (2017-2019):</dt>
+                      <dd>Level 8 Piano & Theory Certification</dd> 
+                      <dd>Grade 8 Gauss Contest School Champion</dd> 
+                      <dd>Grade 8 CNML Contest School Champion</dd> 
+                      <dd>Joining a sports team for the first time</dd> 
+                  </dl>
+              </li>
+              <li id="2019">
+                  <h2>2019</h2>
+                  <dl>
+                      <dt>Location:</dt>
+                      <dd>Toronto, Canada</dd>
+                      <br>
+                      <dt>School:</dt>
+                      <dd>Victoria Park Collegiate Institute</dd>   
+                      <br>
+                      <dt>Accomplishments (2019-2020):</dt>
+                      <dd>Bronze Medallion & Standard First Aid Certification</dd> 
+                      <dd>Getting into an IB program</dd> 
+                      <dd>Volunteering for the first time</dd> 
+                  </dl>
+              </li>
+              <li id="2020">
+                  <h2>2020</h2>
+                  <dl>
+                      <dt>Location:</dt>
+                      <dd>Richmond Hill, Canada</dd>
+                      <br>
+                      <dt>School:</dt>
+                      <dd>Holy Trinity School</dd>   
+                      <br>
+                      <dt>Accomplishments (2020-2023):</dt>
+                      <dd>Co-founding and leading the Coding Club</dd> 
+                      <dd>Becoming a House Captain at my school</dd> 
+                      <dd>Playing for the school Tennis Team (and winning Dedication Award)</dd> 
+                      <dd>Winning multiple math contests and qualifying for AIME</dd> 
+                      <dd>Running my own nonprofit initiative (<a href="https://maplepeers.org/" target="_blank" style="color:orange;">Maple Peers</a>)</dd> 
+                  </dl>
+              </li>
+              <li id="2023">
+                  <h2>2023</h2>
+                  <dl>
+                      <dt>Location:</dt>
+                      <dd>Toronto, Canada</dd>
+                      <br>
+                      <dt>School:</dt>
+                      <dd>University of Toronto (Scarborough Campus)</dd>   
+                      <br>
+                      <dt>Accomplishments (2023-present):</dt>
+                      <dd>Getting into a top CS unviersity with a scholarship (and making POSt) </dd> 
+                      <dd>Working an in-person job for the first time (at a bakery)</dd> 
+                      <dd>Working as a website development intern (online)</dd> 
+                      <dd>Making thousands of dollars from various jobs</dd> 
+                      <dd>Winning my first Hackathon (EWB UofT Moral Code) (<a href="https://patzhang0214.github.io/mealsimple-Moral-Code-Hackathon/" target="_blank" style="color:orange;">Project</a>)</dd> 
+                  </dl>
+              </li>
+          </ul>
+      </div>
+
+      <!-- Interests & Skills -->
+      <div class="container mt-5" id="InterestsSkills">
+          <h1 class="display-4 text-center"><b>Interests & Skills</b></h1>
+          <hr>
+          <div class="row">
+              <div class="col-md-4 mb-3">
+                  <div class="card ">
+                      <div class="card-body">
+                          <h3 class="card-title">Programming</h3>
+                          <p class="card-text text-muted">Level: Proficient</p>
+                          <p id="cardText">I started coding since grade 7, and it has become my passion since then. I utilized my knowledge by building a few projects on <a style="color:orange;" href="https://github.com/oskip0906" target="_blank">GitHub</a>. I know Java, Python, C/C++, HTML, CSS, Javascript, SQL, and a little bit of PHP. </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                  <div class="card ">
+                      <div class="card-body">
+                          <h3 class="card-title">Mathematics</h3>
+                          <p class="card-text text-muted">Level: Asian</p>
+                          <p id="cardText">I used to be below average at math back in China, but when I came to Canada I became top tier, doing well on academics and various contests. However, university once again lowered my ego.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                  <div class="card ">
+                      <div class="card-body">
+                          <h3 class="card-title">Tennis</h3>
+                          <p class="card-text text-muted">Level: Above average</p>
+                          <p id="cardText">I have been playing tennis since grade 6, but I stopped in grade 8 due to laziness and also in grade 10 due to the pandemic. But I got to play for the school team in my senior year.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-4 mb-3">
+                  <div class="card ">
+                      <div class="card-body">
+                          <h3 class="card-title">Photography</h3>
+                          <p class="card-text text-muted">Level: Casual</p>
+                          <p id="cardText">I developed a passion for photography in grade 9, when I participated in a photography summer camp. Here are some of my <a style="color:orange;" href="https://drive.google.com/drive/folders/1s52PVrWk90AfBzke6X-nJYT_TGJ-4Kch?usp=sharing" target="_blank">past photos</a>.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                  <div class="card ">
+                      <div class="card-body">
+                          <h3 class="card-title">Piano</h3>
+                          <p class="card-text text-muted">Level: Used to be insane</p>
+                          <p id="cardText">I reached level 8 in both piano and music theory back in 2019 but stopped since then. I still remember how to play some very easy songs though.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                  <div class="card">
+                      <div class="card-body">
+                          <h3 class="card-title">Statistics</h3>
+                          <p class="card-text text-muted">Level: Good</p>
+                          <p id="cardText">I've never even done this before March 2022. But when I started to study it for the AP exam, I found statistics quite interesting. I received a 5 on the final exam.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-4 mb-3">
+                  <div class="card ">
+                      <div class="card-body">
+                          <h3 class="card-title">Travelling</h3>
+                          <p class="card-text text-muted">Level: Experienced</p>
+                          <p id="cardText">I've visited over 30 countries in 4 different continents. My favorite destinations (in order) are Japan, The Maldives, Switzerland, and Austrailia. I hope to visit Korea soon!</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                  <div class="card ">
+                      <div class="card-body">
+                          <h3 class="card-title">Playing Games</h3>
+                          <p class="card-text text-muted">Level: Not good</p>
+                          <p id="cardText">Everyone knows that I suck, but I still think that gaming is a nice way to escape from my busy schedule. My favorite games are FPS games like R6 and Valorant.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                  <div class="card ">
+                      <div class="card-body">
+                          <h3 class="card-title">YouTube</h3>
+                          <p class="card-text text-muted">Level: N/A</p>
+                          <p id="cardText">I average 20 hours a week on YouTube. I also enjoy watching a lot of movies, a few TV shows, and some anime; but YouTube is simply superior.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <br>
+      
+          <!-- Connections -->
+          <div class="container mt-5 mb-5" id="Connections">
+              <h1 class="display-4 text-center"><b>Connections</b></h1>
+              <hr>
+              <p class="text-center">If you want to reach out to me, the best way is through Discord, Instagram, or my phone number 647-765-6673. I also have Snapchat and Reddit but chose not to include my accounts here as they are mainly for trolling purposes. You can also email me at <a style="color: orange;" href="mailto:oskioscar135@gmail.com">oscar.pang050906@gmail.com</a> for any business/serious inquiries.</p>
+              <div class="row mt-4">
+                  <div class="col-md-6 mb-3">
+                      <div class="card bg-primary">
+                          <div class="card-header text-white text-center">Socials</div>
+                          <ul class="list-group list-group-flush">
+                              <li class="list-group-item d-flex flex-column align-items-center">
+                                  <p id="socialsText">Discord (I'm quite active on this): oskip123</p>
+                                  <a href="https://discord.gg/xeCvpZF2Qu" target="_blank"><img src="images/discord.png" alt="Discord"></a>
+                              </li>
+                              <li class="list-group-item d-flex flex-column align-items-center">
+                                  <p id="socialsText">Instagram (I don't really post much): oskip123</p>
+                                  <a href="https://www.instagram.com/oskip123/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+                              </li>
+                              <li class="list-group-item d-flex flex-column align-items-center">
+                                  <p id="socialsText">Linkedin (I need more connections) </p>
+                                  <a href="https://www.linkedin.com/in/oscar-shenglong-pang-338b00241/" target="_blank"><img src="images/linkedin.png" alt="Linkedin"></a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+      
+                  <div class="col-md-6 mb-3">
+                      <div class="card bg-danger">
+                          <div class="card-header text-white text-center">Other</div>
+                          <ul class="list-group list-group-flush">
+                              <li class="list-group-item d-flex flex-column align-items-center">
+                                  <p id="socialsText">Spotify (I listen to music every day): Random Person</p>
+                                  <a href="https://open.spotify.com/user/7gsd1305qmzdn9i0t4yvtgjbt" target="_blank"><img src="images/spotify.png" alt="Spotify"></a>
+                              </li>
+                              <li class="list-group-item d-flex flex-column align-items-center">
+                                  <p id="socialsText">Steam (I'm bad at games but wtv): Rice Farmer</p>
+                                  <a href="https://steamcommunity.com/profiles/76561198997562925" target="_blank"><img src="images/steam.png" alt="Steam"></a>
+                              </li>
+                              <li class="list-group-item d-flex flex-column align-items-center">
+                                  <p id="socialsText">GitHub (I'm trying to make more projects) </p>
+                                  <a href="https://github.com/oskip0906" target="_blank"><img src="images/github.png" alt="Github"></a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
     </div>
 
 </body>
+
 </html>

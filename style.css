@@ -1,18 +1,66 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: Georgia, serif;
-  background: radial-gradient(circle, rgb(68, 77, 122) 0%, rgb(100, 67, 175) 48%, rgb(63, 84, 119) 100%);
-  color: white;
   font-size: 20px;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background: linear-gradient(270deg, #3b82f6, #4e8cd8, #4983c5, #3b82f6);
+  background-size: 600% 600%;
+  animation: gradientAnimation 20s ease infinite;
 }
 
-nav {   
-  border-right: 7.5px solid aqua;
-  background: linear-gradient(90deg, rgb(169, 179, 31) 0%, rgb(179, 166, 24) 100%);
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.sidebar {
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  background: linear-gradient(270deg, #7a7878, #6e6868);
+  transition: margin 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 9999; 
+}
+
+.sidebar a, .sidebar h2 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.sidebar-closed {
+  margin-left: -300px;
+}
+
+.content {
+  flex: 1;
+  margin-left: 300px; 
+  transition: margin-left 0.3s;
+}
+
+.content-shift {
+  margin-left: 0px;
+}
+
+.toggle-btn {
+  margin: 10px;
+}
+
+.toggle-btn:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+  transform: scale(1.1);
 }
 
 p {
@@ -26,15 +74,6 @@ a:hover {
 hr {
   border: 2.5px solid cyan;
   border-radius: 5px;
-}
-
-#Introduction img {
-  display: block;
-  float: left;
-  width: 15%;
-  border: 5px double green;
-  box-shadow: 5px 5px 5px lightgreen;
-  border-radius: 20px;
 }
 
 #Connections img {
@@ -75,7 +114,7 @@ h1{
 }
 
 #timeline {
-  overflow:hidden;
+  overflow: hidden;
   margin: 5% auto;
   position: relative;
 }
@@ -103,6 +142,7 @@ h1{
 #dates a {
   line-height: 38px;
   padding-bottom: 10px;
+  text-decoration: none;
 }
 
 #dates .selected {
@@ -111,7 +151,7 @@ h1{
 
 #years {
   width: 800px;
-  height: 450px;
+  height: 480px;
 }
 
 #years li {
@@ -168,6 +208,21 @@ dd {
   font-weight: normal; 
 }
 
+.card {
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 5px 5px 10px rgba(204, 13, 13, 0.5);
+}
+
+.card-title {
+  color: darkslateblue;
+
+}
+
+#cardText, #socialsText {
+  color:darkslategray;
+}
+
 ::-webkit-scrollbar
 {
 	width: 20px;
@@ -188,7 +243,7 @@ dd {
     border-radius: 20px;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1200px) {
   #dates {
     text-align: center;
   }
