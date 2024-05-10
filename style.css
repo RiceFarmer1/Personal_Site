@@ -23,7 +23,7 @@ body {
 }
 
 .sidebar {
-  width: 300px;
+  width: 250px;
   height: 100%;
   position: fixed;
   background: linear-gradient(270deg, #7a7878, #6e6868);
@@ -40,12 +40,12 @@ body {
 }
 
 .sidebar-closed {
-  margin-left: -300px;
+  margin-left: -250px;
 }
 
 .content {
   flex: 1;
-  margin-left: 300px; 
+  margin-left: 250px; 
   transition: margin-left 0.3s;
 }
 
