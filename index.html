@@ -1,6 +1,4 @@
-<!-- 
-This website is made by Oscar Pang
--->
+<!-- This website is made by Oscar Pang -->
 
 <!DOCTYPE html>
 <html>
@@ -9,64 +7,72 @@ This website is made by Oscar Pang
     <title>Oscar's Website</title>
     <link rel="icon" href="images/me.png" type="image/png">
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="other.js"></script>
     <script src="timeline.js"></script>
-    
+
 </head>
 
 <body>
 
-    <!-- I got this vertical navbar template from W3Schools
-    I will improve this in the future -->
+    <!-- navbar -->
+    <nav class="navbar navbar-light navbar-expand-lg">
+        <div class="container-fluid m-3">
 
-    <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-        <a href="javascript:void(0)" onclick="close_menu()" class="w3-button w3-hide-large w3-display-topleft w3-black" style="width:100%; font-size:25px">Close</a>
-        <div class="w3-container">
-            <h3 class="w3-xxlarge w3-padding-32"><b>Welcome to the Website of Oscar</b></h3>
+            <h2 class="mb-2">This is Oscar's Website</h2>
+
+            <button class="navbar-toggler mb-2"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarContent"
+                aria-controls="navbarContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-5">
+                        <a class="nav-link text-center" href="#Introduction">Introduction</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link text-center" href="#">Timeline</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link text-center" href="#">Interests & Skills</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link text-center" href="#">Connections</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        
-        <div class="w3-bar-block">
-            <a href="#Introduction" onclick= "close_menu()" class="w3-xlarge w3-bar-item w3-button w3-hover-purple">Introduction</a> 
-            <a href="#timeline" onclick="close_menu()" class=" w3-xlarge w3-bar-item w3-button w3-hover-purple">Timeline</a> 
-            <a href="#Interests & Skills" onclick="close_menu()" class=" w3-xlarge w3-bar-item w3-button w3-hover-purple">Interests & Skills</a> 
-            <a href="#Connections" onclick="close_menu()" class="w3-xlarge w3-bar-item w3-button w3-hover-purple">Connections</a> 
-        </div>
-    </nav>  
-    
-    <header class="w3-container w3-top w3-hide-large w3-orange w3-xlarge w3-padding">
-        <a href="javascript:void(0)" class="w3-button w3-orange w3-margin-right" onclick="open_menu()">☰</a>
-        <span class="w3-xxlarge">Welcome to the Website of Oscar</span>
-    </header>
+    </nav>
 
-    <div class="w3-overlay w3-hide-large" onclick="close_menu()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-    <div class="w3-main" style="margin-left:340px;margin-right:40px">
-
-    <div class="w3-container" style="margin-top:100px;" id="Introduction">
-        <h1 class="w3-xxxlarge w3-text-orange"><b>Introduction</b></h1>
+    <!-- Introduction -->
+    <div class="container mt-5" id="Introduction">
+        <h1 class="text-center mb-4"><b>Introduction</b></h1>
         <hr>
-        <img src = "images/oscar.png" style = "margin-left:5%">
-        <p style="text-align:center; width:70%; margin-left:25%;">Hello, my English name is Oscar Pang (some English tutor named me "oscar"), but my legal name is Shenglong Pang (庞盛龙). 
-            I am Chinese and I currently reside in Toronto, Canada. My personality type is INTP.
-        </p>
-        <br>
-        <p style="text-align:center; width:70%; margin-left:25%;">Some say that I am the embodiment of the Asian stereotype. However, even though my eyes are small, I have a good vision of my future — 
-            My goal is to pursue computer science at a top Canadian university and eventually attend graduate school in the US."
-        </p>
-        <br><br>
-        <div class="w3-center" style="margin-left:15%;">
-            <button onclick="playAudio()" type="button" style="margin-right: 2.5%; border-radius:20px;" id="btn">Play background music</button>
-            <button onclick="pauseAudio()" type="button" style="margin-right: 2.5%; border-radius:20px;" id="btn">Pause background music</button> 
+        <div class="d-flex flex-column align-items-center">
+            <p class="text-center w-75">Hello, my English name is Oscar Pang, but my legal name is Shenglong Pang (庞盛龙).
+                I am Chinese and I currently reside in Toronto, Canada. My personality type is INTP.
+            </p>
+            <p class="text-center w-75"> y goal is to pursue computer science at a top Canadian university and eventually attend graduate school in the US.</p>
+        </div>
+        <div class="text-center mt-4">
+            <button onclick="playAudio()" class="btn btn-primary me-2">Play background music</button>
+            <button onclick="pauseAudio()" class="btn btn-secondary">Pause background music</button>
             <audio id="audio" src="song.mp3"></audio>
         </div>
     </div>
 
     <!-- Timeline -->
-
-    <div class="w3-container" id="timeline" style="margin-top:100px;">
-        <h1 class="w3-xxxlarge w3-text-orange"><b>Timeline</b></h1>
+    <div class="container mt-5" id="timeline">
+        <h1><b>Timeline</b></h1>
         <hr>
 
         <ul id="dates">
@@ -79,7 +85,7 @@ This website is made by Oscar Pang
             <li><a href="#2019">2019</a></li>
             <li><a href="#2020">2020</a></li>
         </ul>
-    
+
         <ul id="years">
             <li id="2005" >
                 <h2>2005</h2>
@@ -88,10 +94,10 @@ This website is made by Oscar Pang
                     <dd>Shenzhen, China</dd>
                     <br>
                     <dt>School:</dt>
-                    <dd>None</dd>   
+                    <dd>None</dd>
                     <br>
                     <dt>Accomplishments (2005-2009):</dt>
-                    <dd>Learning how to talk and walk</dd> 
+                    <dd>Learning how to talk and walk</dd>
                 </dl>
             </li>
             <li id="2009">
@@ -101,12 +107,12 @@ This website is made by Oscar Pang
                     <dd>Changsha, China</dd>
                     <br>
                     <dt>School:</dt>
-                    <dd>Some Kindergarten</dd>   
+                    <dd>Some Kindergarten</dd>
                     <br>
                     <dt>Accomplishments (2009-2011): </dt>
-                    <dd>Making my first friends</dd> 
-                    <dd>Learning how to ride a bicycle</dd> 
-                    <dd></dd> 
+                    <dd>Making my first friends</dd>
+                    <dd>Learning how to ride a bicycle</dd>
+                    <dd></dd>
                 </dl>
             </li>
             <li id="2011">
@@ -116,12 +122,12 @@ This website is made by Oscar Pang
                     <dd>Changsha, China</dd>
                     <br>
                     <dt>School:</dt>
-                    <dd>长沙市育才学校</dd>   
+                    <dd>长沙市育才学校</dd>
                     <br>
                     <dt>Accomplishments (2011-2014):</dt>
-                    <dd>Learning the piano & playing in front of an audience</dd> 
-                    <dd>Learning Taekwondo</dd>  
-                    <dd>Learning Calligraphy</dd>  
+                    <dd>Learning the piano & playing in front of an audience</dd>
+                    <dd>Learning Taekwondo</dd>
+                    <dd>Learning Calligraphy</dd>
                 </dl>
             </li>
             <li id="2014">
@@ -131,12 +137,12 @@ This website is made by Oscar Pang
                     <dd>Toronto, Canada</dd>
                     <br>
                     <dt>School:</dt>
-                    <dd>Mckee Public School</dd>   
+                    <dd>Mckee Public School</dd>
                     <br>
                     <dt>Accomplishments (2014-2016):</dt>
-                    <dd>Learning proper English</dd> 
+                    <dd>Learning proper English</dd>
                     <dd>Adapting to a new country</dd>
-                    <dd>Making my first non-Chinese friend</dd>  
+                    <dd>Making my first non-Chinese friend</dd>
                 </dl>
             </li>
             <li id="2016">
@@ -146,11 +152,11 @@ This website is made by Oscar Pang
                     <dd>Toronto, Canada</dd>
                     <br>
                     <dt>School:</dt>
-                    <dd>Bayview Middle School</dd>   
+                    <dd>Bayview Middle School</dd>
                     <br>
                     <dt>Accomplishments (2016-2017):</dt>
-                    <dd>Joining the Student Council</dd> 
-                    <dd>Winning my first math competition award</dd> 
+                    <dd>Joining the Student Council</dd>
+                    <dd>Winning my first math competition award</dd>
                     <dd>Learning how to play tennis</dd>
                 </dl>
             </li>
@@ -161,13 +167,13 @@ This website is made by Oscar Pang
                     <dd>Richmond Hill, Canada</dd>
                     <br>
                     <dt>School:</dt>
-                    <dd>{Redacted}</dd>   
+                    <dd>{Redacted}</dd>
                     <br>
                     <dt>Accomplishments (2017-2019):</dt>
-                    <dd>Level 8 Piano & Theory Certification</dd> 
-                    <dd>Grade 8 Gauss Contest School Champion</dd> 
-                    <dd>Grade 8 CNML Contest School Champion</dd> 
-                    <dd>Joining a sports team for the first time</dd> 
+                    <dd>Level 8 Piano & Theory Certification</dd>
+                    <dd>Grade 8 Gauss Contest School Champion</dd>
+                    <dd>Grade 8 CNML Contest School Champion</dd>
+                    <dd>Joining a sports team for the first time</dd>
                 </dl>
             </li>
             <li id="2019">
@@ -177,12 +183,12 @@ This website is made by Oscar Pang
                     <dd>Toronto, Canada</dd>
                     <br>
                     <dt>School:</dt>
-                    <dd>Victoria Park Collegiate Institute</dd>   
+                    <dd>Victoria Park Collegiate Institute</dd>
                     <br>
                     <dt>Accomplishments (2019-2020):</dt>
-                    <dd>Bronze Medallion & Standard First Aid Certification</dd> 
-                    <dd>Getting into an IB program</dd> 
-                    <dd>Volunteering for the first time</dd> 
+                    <dd>Bronze Medallion & Standard First Aid Certification</dd>
+                    <dd>Getting into an IB program</dd>
+                    <dd>Volunteering for the first time</dd>
                 </dl>
             </li>
             <li id="2020">
@@ -192,161 +198,113 @@ This website is made by Oscar Pang
                     <dd>Richmond Hill, Canada</dd>
                     <br>
                     <dt>School:</dt>
-                    <dd>Holy Trinity School</dd>   
+                    <dd>Holy Trinity School</dd>
                     <br>
                     <dt>Accomplishments (2020-2023):</dt>
-                    <dd>Co-founding and leading a club (Coding Club)</dd> 
-                    <dd>Becoming a House Captain at my school</dd> 
-                    <dd>Playing for the school Tennis Team</dd> 
-                    <dd>Winning multiple math contests and qualifying for AIME</dd> 
-                    <dd>Starting my own nonprofit organization (<a href="https://maplepeers.org/">Maple Peers</a>)</dd> 
+                    <dd>Co-founding and leading a club (Coding Club)</dd>
+                    <dd>Becoming a House Captain at my school</dd>
+                    <dd>Playing for the school Tennis Team</dd>
+                    <dd>Winning multiple math contests and qualifying for AIME</dd>
+                    <dd>Starting my own nonprofit organization (<a href="https://maplepeers.org/">Maple Peers</a>)</dd>
                 </dl>
             </li>
         </ul>
-    
+
         <a href="#" id="next"></a>
         <a href="#" id="prev"></a>
 
     </div>
-    
+
     <!-- Interests & Skills -->
-    <div class="w3-container" id="Interests & Skills" style="margin-top:75px;">
-        <h1 class="w3-xxxlarge w3-text-orange"><b>Interests & Skills</b></h1>
+    <div class="container mt-5" id="InterestsSkills">
+        <h1 class="text-center text-primary mb-4"><b>Interests & Skills</b></h1>
         <hr>
-        <div class="w3-row-padding">
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
-                    <h3>Programming</h3>
-                    <p class="w3-opacity">Level: Proficient</p>
-                    <p>I started coding since grade 7, and it has become my passion since then. I utilized my knowledge by building a few projects. I know Java, Python, HTML, Javascript, and C.</p>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h3>Programming</h3>
+                        <p class="text-muted">Level: Proficient</p>
+                        <p>I started coding since grade 7, and it has become my passion since then. I know Java, Python, HTML, JavaScript, and C.</p>
                     </div>
                 </div>
             </div>
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
-                    <h3>Mathematics</h3>
-                    <p class="w3-opacity">Level: Asian</p>
-                    <p>I used to be below average at math back in China, but when I came to Canada I suddenly began winning awards. Still, I'm not the best at academic math; only above average.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h3>Mathematics</h3>
+                        <p class="text-muted">Level: Asian</p>
+                        <p>I used to be below average at math back in China but now excel in Canada, winning awards.</p>
                     </div>
                 </div>
             </div>
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
-                    <h3>Tennis</h3>
-                    <p class="w3-opacity">Level: Above average</p>
-                    <p>I have been playing tennis since grade 6, but I stopped in grade 8 due to laziness and also in grade 10 due to the pandemic. But I got to play for the school team last year which is good.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h3>Tennis</h3>
+                        <p class="text-muted">Level: Above average</p>
+                        <p>I have been playing tennis since grade 6, and recently got to play for the school team.</p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="w3-row-padding">
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
-                    <h3>Photography</h3>
-                    <p class="w3-opacity">Level: Casual</p>
-                    <p>I developed a passion for photography in grade 9, when I participated in a photography summer camp. Here are some of my <a style = "background:darkcyan;" href="https://drive.google.com/drive/folders/1s52PVrWk90AfBzke6X-nJYT_TGJ-4Kch?usp=sharing">past photos</a>.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
-                    <h3>Piano</h3>
-                    <p class="w3-opacity">Level: Used to be insane</p>
-                    <p>I reached level 8 in both piano and music theory back in 2019, but stopped since then. I still remember how to play some very easy songs tho.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
-                    <h3>Statistics</h3>
-                    <p class="w3-opacity">Level: Good</p>
-                    <p>I've never even done this before March, 2022. But when I started to study it for the AP exam, I found statistics to be quite interesting. I received a 5 in the end.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="w3-row-padding">
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
-                    <h3>Travelling</h3>
-                    <p class="w3-opacity">Level: Experienced?</p>
-                    <p>I've visited over 30 countries all around the world in 5 different continents. My favorite destinations are Switzerland, Austrailia, and the Maldives.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">
-                    <h3>Playing Games</h3>
-                    <p class="w3-opacity">Level: Meh</p>
-                    <p>Everyone knows that I suck but I still think that gaming is a nice way to escape from my busy schedule. My favorite games are FPS games like R6 and Valorant.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <div class="w3-container" style="padding-bottom: 20px; box-shadow: -1px 1px 3px 5px rgba(163, 135, 135, 0.75);">    
-                    <h3>Watching Youtube Videos</h3>
-                    <p class="w3-opacity">Level: N/A</p>
-                    <p>I average 20 hours a week on youtube. I also enjoy watching a lot of movies, a few TV shows, and <a style = "background:darkviolet;" href="https://myanimelist.net/profile/oskip123">some anime</a>; but Youtube is simply superior.</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Other interests would be structured similarly -->
         </div>
     </div>
 
     <!-- Connections -->
-    <div class="w3-container" id="Connections" style="margin-top:75px; margin-bottom:150px;" id="Connections">
-        <h1 class="w3-xxxlarge w3-text-orange"><b>Connections</b></h1>
+    <div class="container mt-5 mb-5" id="Connections">
+        <h1 class="text-center text-primary mb-4"><b>Connections</b></h1>
         <hr>
-        <p> If you want to reach out to me, the best way is through Discord, Instagram, or my phone number 6477656673. I also have Twitter and Reddit but I chose not
-            to include my accounts here as they are mainly for trolling purposes. You can also email me at <a href="mailto:oskioscar135@gmail.com">oskioscar135@gmail.com</a> 
-            for any business inquiries. </p>
+        <p>If you want to reach out to me, the best way is through Discord or Instagram.</p>
         <br>
-
-        <div class="w3-half w3-row-padding">
-            <ul class="w3-ul w3-center">
-                <li class="w3-blue w3-xlarge w3-padding-32">Socials</li>
-                <li class="w3-light-grey w3-padding-24">
-                <p style="color:black">Discord (I am ur average discord mod): Oskip#7537</p>
-                <a href = "https://discord.gg/YWDCnp3pGq"><img src="images/discord.png" style="width:55px;"></a>
-                </li>
-                <li class="w3-light-grey w3-padding-24">
-                    <p style="color:black">Instagram (I don't really post much): oskip123</p>
-                    <a href = "https://www.instagram.com/oskip123/"><img src="images/instagram.png" style="width:45px;"></a>
-                </li>
-                <li class="w3-light-grey w3-padding-24">
-                    <p style="color:black">Snapchat (I don't use it a lot): shenglongp1</p>    
-                    <a href = "https://t.snapchat.com/J2ybEmBd"><img src="images/snapchat.png" style="width:55px;"></a>
-                </li>
-            </ul>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <ul class="list-group text-center">
+                    <li class="list-group-item list-group-item-primary"><b>Socials</b></li>
+                    <li class="list-group-item">
+                        <p>Discord: Oskip#7537</p>
+                        <a href="https://discord.gg/YWDCnp3pGq">
+                            <img src="images/discord.png" style="width:55px;">
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <p>Instagram: oskip123</p>
+                        <a href="https://www.instagram.com/oskip123/">
+                            <img src="images/instagram.png" style="width:45px;">
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <p>Snapchat: shenglongp1</p>
+                        <a href="https://t.snapchat.com/J2ybEmBd">
+                            <img src="images/snapchat.png" style="width:55px;">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 mb-4">
+                <ul class="list-group text-center">
+                    <li class="list-group-item list-group-item-danger"><b>Other</b></li>
+                    <li class="list-group-item">
+                        <p>Spotify: Random Person</p>
+                        <a href="https://open.spotify.com/user/7gsd1305qmzdn9i0t4yvtgjbt">
+                            <img src="images/spotify.png">
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <p>Steam: Rice Farmer</p>
+                        <a href="https://steamcommunity.com/profiles/76561198997562925">
+                            <img src="images/steam.png">
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <p>Paypal: oskip0906</p>
+                        <a href="https://www.paypal.me/oskip0906?locale.x=en_CA">
+                            <img src="images/paypal.png" style="border-radius:25%;width:45px;">
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <div class="w3-half w3-row-padding">
-            <ul class="w3-ul w3-center">
-                <li class="w3-red w3-xlarge w3-padding-32">Other</li>
-                <li class="w3-light-grey w3-padding-24">
-                    <p style="color:black">Spotify (I listen to music everyday): Random Person</p>
-                    <a href = "https://open.spotify.com/user/7gsd1305qmzdn9i0t4yvtgjbt"><img src="images/spotify.png"></a>
-                </li>
-                <li class="w3-light-grey w3-padding-24">
-                    <p style="color:black">Steam (I'm bad at games but wtv): Rice Farmer</p>
-                    <a href = "https://steamcommunity.com/profiles/76561198997562925"><img src="images/steam.png"></a>
-                </li>
-                <li class="w3-light-grey w3-padding-24">
-                    <p style="color:black">Paypal (I am broke pls donate): oskip0906 </p>
-                    <a href = "https://www.paypal.me/oskip0906?locale.x=en_CA"><img src="images/paypal.png" style = "border-radius:25%;width:45px;"></a>
-                </li>
-            </ul>
-        </div>
-
     </div>
 
 </body>

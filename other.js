@@ -1,13 +1,3 @@
-function open_menu() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-}
-
-function close_menu() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-}
-
 function onClick(element) {
     document.getElementById("img01").src = element.src;
     document.getElementById("modal01").style.display = "block";
@@ -15,11 +5,11 @@ function onClick(element) {
     captionText.innerHTML = element.alt;
 }
 
-function playAudio() { 
+function playAudio() {
   var audio = document.getElementById("audio");
   audio.play();
-} 
-function pauseAudio() { 
+}
+function pauseAudio() {
   var audio = document.getElementById("audio");
   audio.pause();
-} 
+}
