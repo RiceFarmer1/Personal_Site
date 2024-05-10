@@ -209,23 +209,23 @@ dd {
 }
 
 #experience1 {
-  background: lightgreen;
+  border: 5px solid lightgreen;
   box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 #experience2 {
-  background: lightblue;
+  border: 5px solid lightblue;
   box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
 }
 
 #experience3 {
-  background: lightpink;
+  border: 5px solid pink;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
 #experience4 {
-  background: lightyellow;
-  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+  border: 5px solid grey;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
 }
 
 .card {
