@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  background: linear-gradient(270deg, #3b82f6, #4e8cd8, #4983c5, #3b82f6);
+  background: linear-gradient(270deg, #3b82f6, #4a7ebf, #4781c3, #3b82f6);
   background-size: 600% 600%;
   animation: gradientAnimation 20s ease infinite;
 }
@@ -31,7 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 9999; 
+  z-index: 9999;
 }
 
 .sidebar a, .sidebar h2 {
@@ -45,7 +45,7 @@ body {
 
 .content {
   flex: 1;
-  margin-left: 250px; 
+  margin-left: 250px;
   transition: margin-left 0.3s;
 }
 
@@ -205,7 +205,27 @@ dd {
   font-size: 18px;
   margin-right: 70px;
   margin-left: 100px;
-  font-weight: normal; 
+  font-weight: normal;
+}
+
+#experience1 {
+  background: lightgreen;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+#experience2 {
+  background: lightblue;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+}
+
+#experience3 {
+  background: lightpink;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+#experience4 {
+  background: lightyellow;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
 }
 
 .card {
@@ -231,7 +251,7 @@ dd {
 
 ::-webkit-scrollbar-thumb
 {
-	background-color: orangered;	
+	background-color: orangered;
 	background-image: -webkit-linear-gradient(45deg,
     rgba(255, 255, 255, .2) 25%,
     transparent 25%,
