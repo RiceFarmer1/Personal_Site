@@ -76,6 +76,31 @@ hr {
   border-radius: 5px;
 }
 
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 60%;
+  height: 10px;
+  outline: none;
+  opacity: 0.8;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: orange;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px rgba(255, 140, 0, 0.5);
+  cursor: pointer;
+}
+
+
 #Connections img {
   display:inline;
   filter: grayscale(69%);

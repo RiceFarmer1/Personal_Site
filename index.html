@@ -51,13 +51,15 @@
             <h1 class="display-4 text-center mb-4"><b>Introduction</b></h1>
             <hr>
             <div class="d-flex flex-column align-items-center">
-                <p class="text-center w-75">Hello, my English name is Oscar Pang, but my legal name is Shenglong Pang (庞盛龙). I am an 18 year old CS student at the University of Toronto who currently resides in Toronto, Canada. I am single and my personality type is INTP.</p>
-                <p class="text-center w-75">I am currently trying to aquire more skills in computer science so I can get my first real internship for 2025 Winter. In the next few years, my goal is to make enough money to not have to depend on my parents anymore and hopefully buy my own car. </p>
+                <p class="text-center">Hello, my English name is Oscar Pang, but my legal name is Shenglong Pang (庞盛龙). I am an 18 year old CS student at the University of Toronto who currently resides in Toronto, Canada. I am single and my personality type is INTP.</p>
+                <p class="text-center">I am currently trying to aquire more skills in computer science so I can get my first real internship in 2025. In the next few years, my goal is to make enough money to not have to depend on my parents anymore and hopefully buy my own car. </p>
             </div>
             <div class="text-center mt-4">
                 <button onclick="playAudio()" class="btn btn-primary mr-5" style="box-shadow: 1px 1px 5px rgba(77, 70, 70, 0.5);">Play background music</button>
                 <button onclick="pauseAudio()" class="btn btn-secondary" style="box-shadow: 1px 1px 5px rgba(75, 69, 69, 0.5);">Pause background music</button>
                 <audio id="audio" src="song.mp3"></audio>
+                <br><br>
+                <input type="range" id="progressBar" value="0" max="100" oninput="controlSong()">
             </div>
         </div>
 
@@ -229,7 +231,7 @@
         <h1 class="display-4 text-center"><b>Experiences</b></h1>
         <hr>
         <div>
-            <div class="card mx-4 my-4" id="experience1">
+            <div class="card mx-3 my-4" id="experience1">
                 <div class="card-body">
                     <h3 class="card-title">AI Trainer</h3>
                     <p class="card-text text-muted">@ DataAnnotation</p>
@@ -238,7 +240,7 @@
             </div>
         </div>
         <div>
-            <div class="card mx-4 my-4" id="experience2">
+            <div class="card mx-3 my-4" id="experience2">
                 <div class="card-body">
                     <h3 class="card-title">Website Developer</h3>
                     <p class="card-text text-muted">@ FlashCoding Tech</p>
@@ -247,7 +249,7 @@
             </div>
         </div>
         <div>
-            <div class="card mx-4 my-4" id="experience3">
+            <div class="card mx-3 my-4" id="experience3">
                 <div class="card-body">
                     <h3 class="card-title">Founder & President</h3>
                     <p class="card-text text-muted">@ Maplepeers Tutoring</p>
@@ -256,7 +258,7 @@
             </div>
         </div>
         <div>
-            <div class="card mx-4 my-4" id="experience4">
+            <div class="card mx-3 my-4" id="experience4">
                 <div class="card-body">
                     <h3 class="card-title">Student Researcher</h3>
                     <p class="card-text text-muted">@ Cambridge Future Scholar Program</p>

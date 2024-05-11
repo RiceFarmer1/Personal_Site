@@ -11,11 +11,27 @@ function toggleButton() {
 };
 
 function playAudio() {
-  var audio = document.getElementById("audio");
+  var audio = document.getElementById('audio');
   audio.play();
+  audio.addEventListener('timeupdate', updateProgress);
 }
 
 function pauseAudio() {
   var audio = document.getElementById("audio");
   audio.pause();
+}
+
+function controlSong() {
+  var audio = document.getElementById('audio');
+  var progressBar = document.getElementById('progressBar');
+  audio.currentTime = progressBar.value;
+}
+
+function updateProgress() {
+  var audio = document.getElementById('audio');
+  var progressBar = document.getElementById('progressBar');
+  if (!isNaN(audio.duration)) {
+      progressBar.max = audio.duration;
+      progressBar.value = audio.currentTime;
+  }
 }
